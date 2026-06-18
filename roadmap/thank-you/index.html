@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You're In! | The Roadmap | Dianna Carlton</title>
+    <meta name="description" content="Thank you for downloading The Roadmap. Check your inbox for your free guide to turning your social account into a primary income.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #C2410C;
+            --primary-glow: #EA580C;
+            --warm: #B08D57;
+            --warm-glow: #C9A227;
+            --deep: #5B3A52;
+            --bg: #FBF7F0;
+            --surface: #FFFFFF;
+            --surface-warm: #F3ECE0;
+            --text: #2B2420;
+            --text-muted: #6B5D52;
+            --heading-font: 'Fraunces', 'Georgia', serif;
+            --body-font: 'Inter', system-ui, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html.lenis, html.lenis body { height: auto; }
+        .lenis.lenis-smooth { scroll-behavior: auto !important; }
+        .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: var(--body-font);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .paper-grain {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 256px 256px;
+        }
+
+        .font-heading { font-family: var(--heading-font); font-weight: 600; letter-spacing: -0.015em; line-height: 1.1; }
+        .font-body { font-family: var(--body-font); }
+
+        .heading-hero { font-size: clamp(3rem, 5vw + 1rem, 5rem); }
+        .heading-section { font-size: clamp(2rem, 3vw + 0.5rem, 3rem); }
+
+        .cta-btn {
+            display: inline-block;
+            background: var(--primary);
+            color: #ffffff;
+            font-family: var(--body-font);
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            font-size: 1.05rem;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 999px;
+            cursor: pointer;
+            text-decoration: none;
+            position: relative;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+            box-shadow: 0 6px 18px rgba(194, 65, 12, 0.2);
+        }
+        .cta-btn:hover { transform: scale(1.04); background: var(--primary-glow); box-shadow: 0 10px 30px rgba(194, 65, 12, 0.3); color: #ffffff; }
+        .cta-btn:active { transform: scale(0.98); }
+
+        .nav-fixed {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            background: rgba(251, 247, 240, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(43, 36, 32, 0.08);
+        }
+
+        .section-label {
+            font-family: var(--body-font);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 0.75rem;
+            color: var(--warm);
+        }
+
+        .accent-line { width: 48px; height: 3px; background: var(--warm); }
+
+        .check-circle { width: 120px; height: 120px; }
+        @media (min-width: 768px) { .check-circle { width: 160px; height: 160px; } }
+
+        .check-circle circle {
+            fill: none; stroke: var(--primary); stroke-width: 3;
+            stroke-dasharray: 440; stroke-dashoffset: 440;
+        }
+        .check-circle polyline {
+            fill: none; stroke: var(--warm); stroke-width: 4;
+            stroke-linecap: round; stroke-linejoin: round;
+            stroke-dasharray: 100; stroke-dashoffset: 100;
+        }
+
+        .clip-diagonal-top { clip-path: polygon(0 12%, 100% 0, 100% 100%, 0 100%); }
+        @media (max-width: 768px) { .clip-diagonal-top { clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%); } }
+
+        .warm-divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, var(--warm), transparent); opacity: 0.5; }
+
+        @keyframes pulseRing {
+            0% { transform: scale(1); opacity: 0.4; }
+            100% { transform: scale(1.4); opacity: 0; }
+        }
+        .pulse-ring { animation: pulseRing 2s ease-out infinite; animation-delay: 1.5s; }
+    </style>
+</head>
+<body>
+
+    <div class="paper-grain" aria-hidden="true"></div>
+
+    <!-- Fixed Nav -->
+    <nav class="nav-fixed">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="https://diannacarlton.com" class="flex items-center gap-3 no-underline">
+                <span class="font-heading text-xl" style="color: var(--text);">Dianna Carlton</span>
+            </a>
+            <a href="https://diannacarlton.com" class="font-body text-sm transition-colors duration-300 tracking-wide uppercase" style="color: var(--text-muted);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">
+                Back to Home
+            </a>
+        </div>
+    </nav>
+
+    <!-- Thank You Section -->
+    <section class="relative min-h-[80vh] flex items-center justify-center" style="padding-top: 80px; background: var(--bg);">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-15" style="background: radial-gradient(circle, var(--warm) 0%, transparent 70%);" aria-hidden="true"></div>
+
+        <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
+            <div class="flex justify-center mb-10 relative">
+                <svg class="check-circle absolute pulse-ring" viewBox="0 0 150 150" aria-hidden="true" style="opacity: 0;">
+                    <circle cx="75" cy="75" r="70" stroke-width="2" style="stroke: var(--primary); stroke-dasharray: none; stroke-dashoffset: 0; opacity: 0.3;"></circle>
+                </svg>
+                <svg class="check-circle" viewBox="0 0 150 150" role="img" aria-label="Success checkmark" id="check-svg">
+                    <circle cx="75" cy="75" r="70" id="check-circle"></circle>
+                    <polyline points="45 75 65 95 105 55" id="check-mark"></polyline>
+                </svg>
+            </div>
+
+            <div class="section-label mb-4" id="ty-label" style="opacity: 0; transform: translateY(20px);">
+                You're In
+            </div>
+
+            <h1 class="font-heading heading-hero mb-6" id="ty-heading" style="opacity: 0; transform: translateY(30px); color: var(--text);">
+                Your Roadmap Is On Its Way
+            </h1>
+
+            <p class="font-body text-lg md:text-xl max-w-xl mx-auto leading-relaxed mb-4" id="ty-message" style="opacity: 0; transform: translateY(20px); color: var(--text-muted);">
+                Thank you! The Roadmap to turning your struggling social account into a primary income is headed to your inbox right now. This is the first step of your transition &mdash; and I'm glad you took it.
+            </p>
+
+            <div class="flex items-center justify-center gap-3 mt-6" id="ty-email-hint" style="opacity: 0; transform: translateY(15px);">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" style="color: var(--text-muted);">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <span class="font-body text-sm" style="color: var(--text-muted);">Check your inbox (and spam folder, just in case)</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diagonal divider -->
+    <div class="w-full" style="height: 80px; background: linear-gradient(to right, var(--primary), var(--primary-glow)); clip-path: polygon(0 0, 100% 60%, 100% 100%, 0 40%);" aria-hidden="true"></div>
+
+    <!-- Next Steps Section -->
+    <section class="clip-diagonal-top relative py-28 md:py-36" style="background: var(--surface-warm);">
+        <div class="max-w-2xl mx-auto px-6 text-center">
+            <div class="section-label mb-3" id="ns-label" style="opacity: 0; transform: translateX(60px);">
+                Ready For More?
+            </div>
+            <div class="accent-line mx-auto mb-6" id="ns-line" style="clip-path: inset(0 100% 0 0);"></div>
+
+            <h2 class="font-heading heading-section mb-6" id="ns-heading" style="opacity: 0; transform: translateX(60px); color: var(--text);">
+                Want help putting the roadmap into action?
+            </h2>
+
+            <p class="font-body text-lg leading-relaxed mb-10" id="ns-text" style="opacity: 0; transform: translateX(60px); color: var(--text-muted);">
+                The guide gives you the path. If you want to walk it with support, my group coaching program, How to Grow Your Fitness Brand, takes you through the whole transition &mdash; brand, content, advertising, and offers &mdash; in four focused weeks.
+            </p>
+
+            <div id="ns-cta" style="opacity: 0; transform: scale(0.9);">
+                <a href="/grow-your-fitness-brand/" class="cta-btn">
+                    Explore the Coaching Program
+                </a>
+            </div>
+
+            <div class="mt-8">
+                <a href="https://diannacarlton.com" class="font-body text-sm transition-colors duration-300 uppercase tracking-wider" style="color: var(--text-muted);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">
+                    Or head back to the homepage
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative py-12" style="background: var(--bg); border-top: 1px solid rgba(43,36,32,0.08);">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <p class="font-heading text-lg mb-3" style="color: var(--text);">
+                Dianna Carlton
+            </p>
+            <a href="mailto:dianna@diannacarlton.com" class="font-body text-sm transition-colors duration-300" style="color: var(--text-muted);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">
+                dianna@diannacarlton.com
+            </a>
+            <div class="mt-4">
+                <a href="https://diannacarlton.com" class="font-body text-sm transition-colors duration-300 uppercase tracking-wider" style="color: var(--text-muted);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">
+                    Visit Our Website
+                </a>
+            </div>
+            <p class="font-body text-xs mt-6" style="color: var(--text-muted);">
+                &copy; <script>document.write(new Date().getFullYear())</script> Dianna Carlton. A Carlton Family Corporation Brand.
+            </p>
+        </div>
+    </footer>
+
+    <!-- CDN Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+    <script>
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            orientation: 'vertical',
+            smoothWheel: true,
+        });
+        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+        requestAnimationFrame(raf);
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => { lenis.raf(time * 1000); });
+        gsap.ticker.lagSmoothing(0);
+        gsap.registerPlugin(ScrollTrigger);
+
+        const masterTL = gsap.timeline({ delay: 0.3 });
+        masterTL.to('#check-circle', { strokeDashoffset: 0, duration: 1, ease: 'power2.inOut' });
+        masterTL.to('#check-mark', { strokeDashoffset: 0, duration: 0.5, ease: 'power2.out' }, '-=0.2');
+        masterTL.to('.pulse-ring', { opacity: 1, duration: 0.3 }, '-=0.1');
+        masterTL.to('#ty-label', { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, '-=0.1');
+        masterTL.to('#ty-heading', { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' }, '-=0.3');
+        masterTL.to('#ty-message', { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, '-=0.3');
+        masterTL.to('#ty-email-hint', { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' }, '-=0.2');
+
+        const nsItems = ['#ns-label', '#ns-heading', '#ns-text'];
+        nsItems.forEach((sel, i) => {
+            gsap.to(sel, {
+                opacity: 1, x: 0, duration: 0.8, delay: i * 0.15, ease: 'power3.out',
+                scrollTrigger: { trigger: sel, start: 'top 85%', toggleActions: 'play none none none' }
+            });
+        });
+
+        gsap.to('#ns-line', {
+            clipPath: 'inset(0 0% 0 0)', duration: 0.8, ease: 'power2.inOut',
+            scrollTrigger: { trigger: '#ns-line', start: 'top 85%', toggleActions: 'play none none none' }
+        });
+
+        gsap.to('#ns-cta', {
+            opacity: 1, scale: 1, duration: 0.7, ease: 'back.out(1.4)',
+            scrollTrigger: { trigger: '#ns-cta', start: 'top 90%', toggleActions: 'play none none none' }
+        });
+    </script>
+</body>
+</html>

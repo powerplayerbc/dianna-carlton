@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dianna Carlton | Building My Business While Building Myself</title>
+    <meta name="description" content="Guidance for people in transition. Whether you're changing careers, focus, or passion, Dianna Carlton helps you build your business and yourself through business, mindset, fitness, and systems coaching.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary: #C2410C;
+            --primary-glow: #EA580C;
+            --warm: #B08D57;
+            --warm-glow: #C9A227;
+            --deep: #5B3A52;
+            --bg: #FBF7F0;
+            --surface: #FFFFFF;
+            --surface-warm: #F3ECE0;
+            --text: #2B2420;
+            --text-muted: #6B5D52;
+            --heading-font: 'Fraunces', 'Georgia', serif;
+            --body-font: 'Inter', system-ui, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--body-font);
+            -webkit-font-smoothing: antialiased;
+            scroll-behavior: auto;
+        }
+
+        body {
+            overflow-x: hidden;
+            background: var(--bg);
+        }
+
+        html.lenis, html.lenis body { height: auto; }
+        .lenis.lenis-smooth { scroll-behavior: auto; }
+        .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+
+        .paper-grain {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 256px 256px;
+        }
+
+        .font-heading {
+            font-family: var(--heading-font);
+            font-weight: 600;
+            letter-spacing: -0.015em;
+            line-height: 1.1;
+        }
+
+        .font-body { font-family: var(--body-font); }
+
+        .clip-diagonal { clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); }
+        .clip-diagonal-both { clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%); }
+
+        .nav-glass {
+            background: rgba(251, 247, 240, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .nav-scrolled {
+            background: rgba(251, 247, 240, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(43, 36, 32, 0.08);
+        }
+
+        .nav-link {
+            font-family: var(--body-font);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            text-decoration: none;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover { color: var(--primary); }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--warm);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after { width: 100%; }
+
+        .mobile-menu {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            background: rgba(251, 247, 240, 0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .mobile-menu.active { opacity: 1; pointer-events: all; }
+
+        .mobile-menu .nav-link {
+            font-family: var(--heading-font);
+            font-weight: 600;
+            font-size: 2rem;
+            letter-spacing: 0;
+            text-transform: none;
+            color: var(--text);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            width: 28px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+            z-index: 110;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: var(--text);
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+            .nav-desktop { display: none !important; }
+        }
+
+        .section-label {
+            font-family: var(--body-font);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--warm);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-label::before {
+            content: '';
+            display: block;
+            width: 2rem;
+            height: 2px;
+            background: var(--warm);
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2.4rem;
+            background: var(--primary);
+            color: #fff;
+            font-family: var(--body-font);
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+            border: none;
+            border-radius: 999px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-glow);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(194, 65, 12, 0.25);
+        }
+
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.18) 50%, transparent 60%);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .btn-primary:hover::after { transform: translateX(100%); }
+
+        .btn-warm {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.1rem 3rem;
+            background: var(--primary);
+            color: #fff;
+            font-family: var(--body-font);
+            font-weight: 600;
+            font-size: 1.15rem;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+            border: none;
+            border-radius: 999px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-warm:hover {
+            background: var(--primary-glow);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(194, 65, 12, 0.3);
+        }
+
+        .btn-warm::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.22) 50%, transparent 60%);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .btn-warm:hover::after { transform: translateX(100%); }
+
+        .service-card {
+            background: var(--surface);
+            border: 1px solid rgba(43, 36, 32, 0.08);
+            border-radius: 1rem;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 1px 3px rgba(43, 36, 32, 0.04);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: linear-gradient(135deg, transparent 45%, rgba(194, 65, 12, 0.05) 50%, transparent 55%);
+            transform: rotate(-20deg);
+            transition: opacity 0.4s ease;
+            opacity: 0;
+        }
+
+        .service-card:hover {
+            border-color: rgba(194, 65, 12, 0.25);
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(43, 36, 32, 0.08);
+        }
+
+        .service-card:hover::before { opacity: 1; }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-glow));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .service-card:hover::after { transform: scaleX(1); }
+
+        .testimonial-card {
+            background: var(--surface);
+            border: 1px solid rgba(43, 36, 32, 0.08);
+            border-radius: 1rem;
+            padding: 2.5rem;
+            position: relative;
+            box-shadow: 0 1px 3px rgba(43, 36, 32, 0.04);
+        }
+
+        .testimonial-card::before {
+            content: '\201C';
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 4rem;
+            font-family: var(--heading-font);
+            color: var(--warm);
+            opacity: 0.35;
+            line-height: 1;
+        }
+
+        .stat-value {
+            font-family: var(--heading-font);
+            font-weight: 700;
+            font-size: 4rem;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-family: var(--body-font);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-top: 0.5rem;
+        }
+
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            will-change: transform;
+        }
+
+        .marquee-text {
+            font-family: var(--heading-font);
+            font-weight: 700;
+            font-size: clamp(3rem, 6vw, 5rem);
+            white-space: nowrap;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(43, 36, 32, 0.1);
+            padding: 0 2vw;
+            line-height: 1.1;
+            user-select: none;
+        }
+
+        .marquee-text .accent {
+            -webkit-text-stroke-color: var(--primary);
+            opacity: 0.35;
+        }
+
+        .credential-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            background: rgba(194, 65, 12, 0.08);
+            border: 1px solid rgba(194, 65, 12, 0.18);
+            border-radius: 0.5rem;
+            color: var(--primary);
+            font-family: var(--body-font);
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+        }
+
+        .heading-hero { font-size: clamp(3rem, 5vw + 1rem, 5rem); }
+        .heading-section { font-size: clamp(2rem, 3vw + 0.5rem, 3rem); }
+        .heading-cta { font-size: clamp(2.5rem, 4vw + 0.5rem, 4rem); }
+        .subheading-hero { font-size: clamp(1.25rem, 1.5vw + 0.5rem, 1.75rem); }
+
+        .gs-fade-up { opacity: 0; transform: translateY(60px); }
+        .gs-slide-left { opacity: 0; transform: translateX(-80px); }
+        .gs-slide-right { opacity: 0; transform: translateX(80px); }
+        .gs-scale-up { opacity: 0; transform: scale(0.85); }
+
+        @media (max-width: 768px) {
+            .stat-value { font-size: 2.5rem; }
+            .btn-warm { padding: 0.9rem 2rem; font-size: 1.05rem; }
+            .btn-primary { padding: 0.8rem 1.8rem; font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="paper-grain" aria-hidden="true"></div>
+
+    <!-- NAV -->
+    <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 nav-glass transition-all duration-500" role="navigation" aria-label="Main navigation">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="https://diannacarlton.com" class="flex items-center gap-3 no-underline z-50 relative" style="color: var(--text);">
+                <span class="font-heading text-xl">Dianna Carlton</span>
+            </a>
+
+            <div class="nav-desktop hidden md:flex items-center gap-8">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#testimonials" class="nav-link">Stories</a>
+                <a href="/roadmap/" class="nav-link">Free Guide</a>
+                <a href="/grow-your-fitness-brand/" class="btn-primary" style="padding: 0.6rem 1.6rem; font-size: 0.9rem;">
+                    Work With Me
+                </a>
+            </div>
+
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#about" class="nav-link mobile-nav-link">About</a>
+        <a href="#services" class="nav-link mobile-nav-link">Services</a>
+        <a href="#testimonials" class="nav-link mobile-nav-link">Stories</a>
+        <a href="/roadmap/" class="nav-link mobile-nav-link">Free Guide</a>
+        <a href="/grow-your-fitness-brand/" class="btn-warm" style="margin-top: 1rem;">
+            Work With Me
+        </a>
+    </div>
+
+    <!-- HERO -->
+    <section class="relative min-h-screen flex items-center clip-diagonal overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1920&q=70');"></div>
+            <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(251,247,240,0.84), rgba(251,247,240,0.8), var(--bg));"></div>
+        </div>
+
+        <div class="absolute top-1/3 right-0 w-[600px] h-[600px] rounded-full opacity-20 z-0" style="background: radial-gradient(circle, var(--warm) 0%, transparent 70%);"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 py-32 md:py-40 lg:py-48">
+            <div class="max-w-5xl">
+                <div class="section-label gs-fade-up mb-6" data-hero-stagger="1">Dianna Carlton &middot; Coach &amp; Guide</div>
+
+                <h1 class="font-heading heading-hero mb-6 gs-fade-up" data-hero-stagger="2" style="color: var(--text);">
+                    Building my business while building myself
+                </h1>
+
+                <p class="font-heading subheading-hero leading-snug mb-6 gs-fade-up" data-hero-stagger="3" style="color: var(--primary); font-weight: 600;">
+                    Guidance for anyone in transition &mdash; from someone who's walking it too.
+                </p>
+
+                <p class="text-lg max-w-2xl leading-relaxed mb-10 gs-fade-up" data-hero-stagger="4" style="color: var(--text-muted);">
+                    A change of career. A change of focus. A change of passion. If you feel like you're transitioning into something new and you want a guide you can actually relate to &mdash; you're in the right place. We grow the business and the person at the same time, across four pillars: business, mindset, fitness, and systems.
+                </p>
+
+                <div class="gs-fade-up" data-hero-stagger="5">
+                    <a href="#services" class="btn-warm">
+                        Explore How I Help
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-16 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-40">
+            <div class="w-px h-10 animate-pulse" style="background: linear-gradient(to bottom, rgba(43,36,32,0.4), transparent);"></div>
+        </div>
+
+        <div class="absolute bottom-0 left-0 right-0 h-px" style="background: linear-gradient(90deg, transparent, var(--warm), transparent); transform: rotate(-2deg) translateY(-20px);"></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="relative py-24 md:py-32" style="background: var(--bg);">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+
+                <div class="gs-slide-left">
+                    <div class="section-label mb-6">About Dianna</div>
+                    <h2 class="font-heading heading-section mb-6" style="color: var(--text);">
+                        I'm not on the other side of the mountain &mdash; I'm climbing it with you
+                    </h2>
+                    <div class="text-lg leading-relaxed mb-8 space-y-4" style="color: var(--text-muted);">
+                        <p>So much coaching comes from people who pretend they have it all figured out. I don't, and I won't pretend to. I'm building my business in real time &mdash; and building myself right alongside it.</p>
+                        <p>That's exactly why I can help you. I know what it feels like to be mid-transition: when the old version of you doesn't fit anymore and the new one isn't quite built yet. I'll show you the systems, the mindset shifts, and the daily habits that move you forward without burning out.</p>
+                    </div>
+                    <div class="credential-badge" style="display:block;padding:1rem 1.2rem;line-height:1.6;">
+                        Business &middot; Mindset &middot; Fitness &middot; Systems &mdash; the four pillars I build everything around.
+                    </div>
+                </div>
+
+                <div class="gs-slide-right relative">
+                    <div class="relative overflow-hidden" style="clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%); border-radius: 0.75rem;">
+                        <img
+                            src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1920&q=70"
+                            alt="Dianna Carlton coaching"
+                            class="w-full h-[500px] object-cover"
+                            loading="lazy"
+                            onerror="this.style.display='none'"
+                        >
+                        <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(43,36,32,0.18), transparent);"></div>
+                    </div>
+                    <div class="absolute -bottom-3 -right-3 w-full h-full border-2 -z-10" style="border-color: var(--warm); opacity: 0.3; border-radius: 0.75rem;"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <section class="relative py-8 md:py-12 overflow-hidden" style="background: var(--bg);" aria-hidden="true">
+        <div class="marquee-track" id="marquee-homepage">
+            <span class="marquee-text">Build the business. Build yourself.</span>
+            <span class="marquee-text accent">&bull;</span>
+            <span class="marquee-text">Build the business. Build yourself.</span>
+            <span class="marquee-text accent">&bull;</span>
+            <span class="marquee-text">Build the business. Build yourself.</span>
+            <span class="marquee-text accent">&bull;</span>
+            <span class="marquee-text">Build the business. Build yourself.</span>
+            <span class="marquee-text accent">&bull;</span>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="relative py-24 md:py-32 clip-diagonal-both" style="background: var(--surface-warm);">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="section-label justify-center gs-fade-up mb-4">How I Help</div>
+                <h2 class="font-heading heading-section gs-fade-up" style="color: var(--text);">Four pillars for the person in transition</h2>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-6 md:gap-8" id="services-grid">
+                <!-- Business -->
+                <div class="service-card gs-fade-up" data-stagger-group="services">
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-4 mb-4">
+                        <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center" style="background: rgba(194, 65, 12, 0.08); border: 1px solid rgba(194, 65, 12, 0.18); border-radius: 0.5rem;">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        </div>
+                        <h3 class="font-heading text-xl md:text-2xl" style="color: var(--text);">Business Coaching</h3>
+                        </div>
+                        <p class="leading-relaxed mt-2" style="color: var(--text-muted);">Turn your new direction into a real, revenue-generating business. We map your offer, your audience, and the first profitable steps &mdash; without the overwhelm that stalls most people mid-transition.</p>
+                    </div>
+                </div>
+
+                <!-- Mindset -->
+                <div class="service-card gs-fade-up" data-stagger-group="services">
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-4 mb-4">
+                        <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center" style="background: rgba(194, 65, 12, 0.08); border: 1px solid rgba(194, 65, 12, 0.18); border-radius: 0.5rem;">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2z"/></svg>
+                        </div>
+                        <h3 class="font-heading text-xl md:text-2xl" style="color: var(--text);">Mindset Coaching</h3>
+                        </div>
+                        <p class="leading-relaxed mt-2" style="color: var(--text-muted);">Transition is as much mental as it is practical. We work through the fear, the identity shift, and the self-doubt so you can show up confidently as the person you're becoming &mdash; not the one you're leaving behind.</p>
+                    </div>
+                </div>
+
+                <!-- Fitness -->
+                <div class="service-card gs-fade-up" data-stagger-group="services">
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-4 mb-4">
+                        <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center" style="background: rgba(194, 65, 12, 0.08); border: 1px solid rgba(194, 65, 12, 0.18); border-radius: 0.5rem;">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5L17.5 17.5"/><path d="M21 21l-1-1"/><path d="M3 3l1 1"/><path d="M18 22l4-4"/><path d="M2 6l4-4"/><path d="M3 10l7-7"/><path d="M14 21l7-7"/></svg>
+                        </div>
+                        <h3 class="font-heading text-xl md:text-2xl" style="color: var(--text);">Fitness &amp; Energy</h3>
+                        </div>
+                        <p class="leading-relaxed mt-2" style="color: var(--text-muted);">You can't build a new life on an empty tank. We build sustainable fitness and energy habits that fit a busy, changing schedule &mdash; so your body keeps up with your ambition instead of holding it back.</p>
+                    </div>
+                </div>
+
+                <!-- Systems -->
+                <div class="service-card gs-fade-up" data-stagger-group="services">
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-4 mb-4">
+                        <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center" style="background: rgba(194, 65, 12, 0.08); border: 1px solid rgba(194, 65, 12, 0.18); border-radius: 0.5rem;">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                        </div>
+                        <h3 class="font-heading text-xl md:text-2xl" style="color: var(--text);">Systems &amp; Structure</h3>
+                        </div>
+                        <p class="leading-relaxed mt-2" style="color: var(--text-muted);">Motivation fades; systems carry you. We install the routines, tools, and simple workflows that keep your business and your life running &mdash; so progress doesn't depend on a perfect day.</p>
+                    </div>
+                </div>
+
+                <!-- Transition Coaching (group) -->
+                <div class="service-card gs-fade-up" data-stagger-group="services">
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-4 mb-4">
+                        <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center" style="background: rgba(194, 65, 12, 0.08); border: 1px solid rgba(194, 65, 12, 0.18); border-radius: 0.5rem;">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <h3 class="font-heading text-xl md:text-2xl" style="color: var(--text);">Group Transition Coaching</h3>
+                        </div>
+                        <p class="leading-relaxed mt-2" style="color: var(--text-muted);">Go through it with people who get it. My group programs combine all four pillars with a community of others in transition &mdash; accountability, momentum, and the relief of not doing this alone.</p>
+                    </div>
+                </div>
+
+                <!-- 1:1 -->
+                <div class="service-card gs-fade-up" data-stagger-group="services">
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-4 mb-4">
+                        <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center" style="background: rgba(194, 65, 12, 0.08); border: 1px solid rgba(194, 65, 12, 0.18); border-radius: 0.5rem;">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        </div>
+                        <h3 class="font-heading text-xl md:text-2xl" style="color: var(--text);">1:1 Private Coaching</h3>
+                        </div>
+                        <p class="leading-relaxed mt-2" style="color: var(--text-muted);">When you want focused, personal guidance, we work one-on-one to build a plan around your exact transition &mdash; tailored to your goals, your season of life, and your pace.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="relative py-24 md:py-32" style="background: var(--bg);">
+        <div class="absolute inset-0" style="background: linear-gradient(to bottom right, rgba(194,65,12,0.04), transparent, rgba(176,141,87,0.05));"></div>
+
+        <div class="relative max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="section-label justify-center gs-fade-up mb-4">The Approach</div>
+                <h2 class="font-heading heading-section gs-fade-up" style="color: var(--text);">Built around what actually moves you forward</h2>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
+                <div>
+                    <div class="stat-value" data-counter="4">0</div>
+                    <div class="stat-label">Core Pillars</div>
+                </div>
+                <div>
+                    <div class="stat-value" data-counter="100%">0</div>
+                    <div class="stat-label">Relatable Guidance</div>
+                </div>
+                <div>
+                    <div class="stat-value" data-counter="1">0</div>
+                    <div class="stat-label">Step At A Time</div>
+                </div>
+                <div>
+                    <div class="stat-value" data-counter="0">0</div>
+                    <div class="stat-label">Pretending To Have It All Figured Out</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="relative py-24 md:py-32 clip-diagonal-both" style="background: var(--surface-warm);">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="section-label justify-center gs-fade-up mb-4">Stories</div>
+                <h2 class="font-heading heading-section gs-fade-up" style="color: var(--text);">From people mid-transition</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 md:gap-8">
+                <div class="testimonial-card gs-slide-left">
+                    <blockquote class="relative z-10">
+                        <p class="text-lg leading-relaxed mb-6 italic" style="color: var(--text);">
+                            "I left a career I'd done for 15 years and felt completely lost. Dianna didn't just hand me a business plan &mdash; she helped me believe I could actually do this. The systems she gave me made it feel doable instead of terrifying."
+                        </p>
+                        <footer class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full flex items-center justify-center font-heading text-lg" style="background: var(--primary); color: #fff;">M</div>
+                            <div>
+                                <cite class="not-italic font-heading text-lg" style="color: var(--text);">Maria L.</cite>
+                                <p class="text-sm" style="color: var(--text-muted);">Career changer, now a wellness coach</p>
+                            </div>
+                        </footer>
+                    </blockquote>
+                </div>
+
+                <div class="testimonial-card gs-slide-right">
+                    <blockquote class="relative z-10">
+                        <p class="text-lg leading-relaxed mb-6 italic" style="color: var(--text);">
+                            "The mindset work was the part I didn't know I needed. I'd been blaming my lack of discipline, but really I was scared. Working with Dianna, I finally got my energy and my confidence back at the same time."
+                        </p>
+                        <footer class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full flex items-center justify-center font-heading text-lg" style="background: var(--primary); color: #fff;">J</div>
+                            <div>
+                                <cite class="not-italic font-heading text-lg" style="color: var(--text);">Jordan P.</cite>
+                                <p class="text-sm" style="color: var(--text-muted);">Rebuilding after burnout</p>
+                            </div>
+                        </footer>
+                    </blockquote>
+                </div>
+
+                <div class="testimonial-card gs-slide-left">
+                    <blockquote class="relative z-10">
+                        <p class="text-lg leading-relaxed mb-6 italic" style="color: var(--text);">
+                            "What I love is that she's in it too. She's honest about building her own business while she's coaching you on yours. That made everything feel real and made me trust the process."
+                        </p>
+                        <footer class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full flex items-center justify-center font-heading text-lg" style="background: var(--primary); color: #fff;">A</div>
+                            <div>
+                                <cite class="not-italic font-heading text-lg" style="color: var(--text);">Alicia R.</cite>
+                                <p class="text-sm" style="color: var(--text-muted);">Following a new passion full-time</p>
+                            </div>
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="contact" class="relative py-28 md:py-36" style="background: linear-gradient(135deg, var(--primary) 0%, var(--deep) 100%);">
+        <div class="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full opacity-25" style="background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);"></div>
+        <div class="absolute top-1/2 right-1/4 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full opacity-20" style="background: radial-gradient(circle, var(--warm-glow) 0%, transparent 70%);"></div>
+
+        <div class="relative max-w-4xl mx-auto px-6 text-center gs-scale-up">
+            <div class="section-label justify-center mb-6" style="color: var(--warm-glow);">Ready When You Are</div>
+
+            <h2 class="font-heading heading-cta text-white mb-6">
+                Let's build what's next &mdash; together
+            </h2>
+
+            <p class="text-xl md:text-2xl max-w-2xl mx-auto mb-12 leading-relaxed" style="color: rgba(255,255,255,0.85);">
+                Start free with the roadmap, or jump into the group coaching program and start turning your transition into momentum.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="/grow-your-fitness-brand/" class="btn-warm inline-flex" style="background: #fff; color: var(--primary);">
+                    Join the Coaching Program
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="/roadmap/" class="btn-warm inline-flex" style="background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.5);">
+                    Get the Free Roadmap
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="relative py-16 md:py-20" style="background: var(--bg); border-top: 1px solid rgba(43,36,32,0.08);">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12 md:gap-16 mb-12">
+
+                <div>
+                    <a href="https://diannacarlton.com" class="flex items-center gap-3 mb-4 no-underline" style="color: var(--text);">
+                        <span class="font-heading text-2xl">Dianna Carlton</span>
+                    </a>
+                    <p class="text-sm leading-relaxed" style="color: var(--text-muted);">Building my business while building myself &mdash; and helping you do the same. Business, mindset, fitness, and systems coaching for people in transition.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-heading text-lg mb-4" style="color: var(--text);">Contact</h4>
+                    <div class="space-y-3 text-sm">
+                        <a href="mailto:dianna@diannacarlton.com" class="flex items-center gap-3 transition-colors" style="color: var(--text-muted);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            dianna@diannacarlton.com
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-heading text-lg mb-4" style="color: var(--text);">Explore</h4>
+                    <div class="space-y-3 text-sm">
+                        <a href="#services" class="block transition-colors" style="color: var(--text-muted);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Services</a>
+                        <a href="/roadmap/" class="block transition-colors" style="color: var(--text-muted);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Free Roadmap Guide</a>
+                        <a href="/grow-your-fitness-brand/" class="block transition-colors" style="color: var(--text-muted);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Coaching Program</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm" style="border-top: 1px solid rgba(43,36,32,0.06); color: var(--text-muted);">
+                <span>&copy; <script>document.write(new Date().getFullYear())</script> Dianna Carlton. A Carlton Family Corporation Brand.</span>
+                <span>6655 W. Sahara Ave., Suite B200, Las Vegas, NV 89146</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CDN Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+    <script>
+    (function() {
+        'use strict';
+
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            orientation: 'vertical',
+            gestureOrientation: 'vertical',
+            smoothWheel: true,
+            wheelMultiplier: 1,
+            touchMultiplier: 2,
+        });
+
+        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+        requestAnimationFrame(raf);
+
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => { lenis.raf(time * 1000); });
+        gsap.ticker.lagSmoothing(0);
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', (e) => {
+                const target = document.querySelector(anchor.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    lenis.scrollTo(target, { offset: -80 });
+                }
+            });
+        });
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const dur = prefersReducedMotion ? 0.01 : 0.8;
+        const ease = 'power3.out';
+
+        const nav = document.getElementById('main-nav');
+        ScrollTrigger.create({
+            start: 'top -100',
+            onUpdate: (self) => {
+                if (self.scroll() > 100) {
+                    nav.classList.add('nav-scrolled');
+                    nav.classList.remove('nav-glass');
+                } else {
+                    nav.classList.remove('nav-scrolled');
+                    nav.classList.add('nav-glass');
+                }
+            }
+        });
+
+        const hamburger = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        hamburger.addEventListener('click', () => {
+            const isActive = hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', isActive);
+            document.body.style.overflow = isActive ? 'hidden' : '';
+        });
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            });
+        });
+
+        const heroEls = document.querySelectorAll('[data-hero-stagger]');
+        const heroSorted = Array.from(heroEls).sort((a, b) =>
+            parseInt(a.dataset.heroStagger) - parseInt(b.dataset.heroStagger)
+        );
+        gsap.fromTo(heroSorted, { opacity: 0, y: 60 }, {
+            opacity: 1, y: 0, duration: dur, ease: ease, stagger: 0.18, delay: 0.4
+        });
+
+        gsap.utils.toArray('.gs-slide-left').forEach(el => {
+            gsap.fromTo(el, { opacity: 0, x: -80 }, {
+                opacity: 1, x: 0, duration: dur, ease: ease,
+                scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' }
+            });
+        });
+
+        gsap.utils.toArray('.gs-slide-right').forEach(el => {
+            gsap.fromTo(el, { opacity: 0, x: 80 }, {
+                opacity: 1, x: 0, duration: dur, ease: ease,
+                scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' }
+            });
+        });
+
+        const marqueeTrack = document.getElementById('marquee-homepage');
+        if (marqueeTrack) {
+            gsap.to(marqueeTrack, {
+                x: () => -(marqueeTrack.scrollWidth / 2),
+                ease: 'none',
+                scrollTrigger: { trigger: marqueeTrack.parentElement, start: 'top bottom', end: 'bottom top', scrub: 0.5 }
+            });
+        }
+
+        const servicesGrid = document.getElementById('services-grid');
+        if (servicesGrid) {
+            const serviceCards = servicesGrid.querySelectorAll('.service-card');
+            gsap.fromTo(serviceCards, { opacity: 0, y: 60 }, {
+                opacity: 1, y: 0, duration: dur, ease: ease, stagger: 0.12,
+                scrollTrigger: { trigger: servicesGrid, start: 'top 80%', toggleActions: 'play none none none' }
+            });
+        }
+
+        document.querySelectorAll('[data-counter]').forEach(el => {
+            const raw = el.getAttribute('data-counter');
+            const match = raw.match(/^([^0-9]*)([0-9,.]+)(.*)$/);
+            if (!match) { el.textContent = raw; return; }
+            const prefix = match[1];
+            const numStr = match[2].replace(/,/g, '');
+            const suffix = match[3];
+            const target = parseFloat(numStr);
+            const hasDecimal = numStr.includes('.');
+            const decimalPlaces = hasDecimal ? numStr.split('.')[1].length : 0;
+            const useCommas = match[2].includes(',');
+            const counter = { val: 0 };
+            gsap.to(counter, {
+                val: target, duration: 2.2, ease: 'power2.out',
+                scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' },
+                onUpdate: () => {
+                    let display = hasDecimal ? counter.val.toFixed(decimalPlaces) : Math.round(counter.val).toString();
+                    if (useCommas) {
+                        display = Number(display).toLocaleString('en-US', { minimumFractionDigits: decimalPlaces, maximumFractionDigits: decimalPlaces });
+                    }
+                    el.textContent = prefix + display + suffix;
+                }
+            });
+        });
+
+        gsap.utils.toArray('.gs-scale-up').forEach(el => {
+            gsap.fromTo(el, { opacity: 0, scale: 0.85 }, {
+                opacity: 1, scale: 1, duration: dur * 1.2, ease: 'power2.out',
+                scrollTrigger: { trigger: el, start: 'top 85%', end: 'top 50%', toggleActions: 'play none none none' }
+            });
+        });
+
+        gsap.utils.toArray('.gs-fade-up').forEach(el => {
+            if (el.hasAttribute('data-hero-stagger')) return;
+            gsap.fromTo(el, { opacity: 0, y: 60 }, {
+                opacity: 1, y: 0, duration: dur, ease: ease,
+                scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' }
+            });
+        });
+
+    })();
+    </script>
+
+</body>
+</html>

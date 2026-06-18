@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Grow Your Fitness Brand | Dianna Carlton</title>
+    <meta name="description" content="A group coaching program for coaches, trainers, gym owners, and fitness creators who want to turn their presence into income. Build the business, the brand, and the systems behind a fitness brand that actually pays. $499.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary: #C2410C;
+            --primary-glow: #EA580C;
+            --warm: #B08D57;
+            --warm-glow: #C9A227;
+            --deep: #5B3A52;
+            --bg: #FBF7F0;
+            --surface: #FFFFFF;
+            --surface-warm: #F3ECE0;
+            --text: #2B2420;
+            --text-muted: #6B5D52;
+            --heading-font: 'Fraunces', 'Georgia', serif;
+            --body-font: 'Inter', system-ui, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--body-font);
+            -webkit-font-smoothing: antialiased;
+            scroll-behavior: auto;
+        }
+
+        body { overflow-x: hidden; background: var(--bg); }
+
+        html.lenis, html.lenis body { height: auto; }
+        .lenis.lenis-smooth { scroll-behavior: auto; }
+        .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+
+        .paper-grain {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 256px 256px;
+        }
+
+        .font-heading {
+            font-family: var(--heading-font);
+            font-weight: 600;
+            letter-spacing: -0.015em;
+            line-height: 1.1;
+        }
+
+        .font-body { font-family: var(--body-font); }
+
+        .clip-diagonal { clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); }
+        .clip-diagonal-reverse { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%); }
+        .clip-diagonal-both { clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%); }
+
+        .nav-glass {
+            background: rgba(251, 247, 240, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(43, 36, 32, 0.06);
+        }
+
+        .nav-solid {
+            background: rgba(251, 247, 240, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(43, 36, 32, 0.08);
+        }
+
+        .section-label {
+            font-family: var(--body-font);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--warm);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-label::before {
+            content: '';
+            display: block;
+            width: 2rem;
+            height: 2px;
+            background: var(--warm);
+        }
+
+        .btn-warm {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.1rem 3rem;
+            background: var(--primary);
+            color: #fff;
+            font-family: var(--body-font);
+            font-weight: 600;
+            font-size: 1.15rem;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+            border: none;
+            border-radius: 999px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-warm:hover {
+            background: var(--primary-glow);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(194, 65, 12, 0.3);
+        }
+
+        .benefit-card {
+            background: var(--surface);
+            border: 1px solid rgba(43, 36, 32, 0.08);
+            border-radius: 1rem;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 1px 3px rgba(43, 36, 32, 0.04);
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--primary);
+            transition: width 0.4s ease;
+        }
+
+        .benefit-card:hover {
+            border-color: rgba(194, 65, 12, 0.25);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(43, 36, 32, 0.08);
+        }
+
+        .benefit-card:hover::before { width: 6px; }
+
+        .testimonial-card {
+            background: var(--surface);
+            border: 1px solid rgba(43, 36, 32, 0.08);
+            border-radius: 1rem;
+            padding: 2.5rem;
+            position: relative;
+            box-shadow: 0 1px 3px rgba(43, 36, 32, 0.04);
+        }
+
+        .testimonial-card::before {
+            content: '\201C';
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 4rem;
+            font-family: var(--heading-font);
+            color: var(--warm);
+            opacity: 0.35;
+            line-height: 1;
+        }
+
+        .faq-item { border-bottom: 1px solid rgba(43, 36, 32, 0.1); }
+
+        .faq-question {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-family: var(--heading-font);
+            font-weight: 600;
+            font-size: 1.25rem;
+            letter-spacing: -0.01em;
+            text-align: left;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .faq-question:hover { color: var(--primary); }
+
+        .faq-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            position: relative;
+            flex-shrink: 0;
+            margin-left: 1rem;
+        }
+
+        .faq-icon::before, .faq-icon::after {
+            content: '';
+            position: absolute;
+            background: var(--warm);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-icon::before { width: 100%; height: 2px; top: 50%; left: 0; transform: translateY(-50%); }
+        .faq-icon::after { width: 2px; height: 100%; left: 50%; top: 0; transform: translateX(-50%); }
+        .faq-item.active .faq-icon::after { transform: translateX(-50%) rotate(90deg); }
+
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.4s ease; }
+        .faq-item.active .faq-answer { max-height: 320px; }
+        .faq-answer-inner { padding-bottom: 1.5rem; color: var(--text-muted); font-size: 1rem; line-height: 1.7; }
+
+        .marquee-track { display: flex; width: max-content; will-change: transform; }
+
+        .marquee-text {
+            font-family: var(--heading-font);
+            font-weight: 700;
+            font-size: clamp(3rem, 6vw, 5rem);
+            white-space: nowrap;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(43, 36, 32, 0.1);
+            padding: 0 2vw;
+            line-height: 1.1;
+            user-select: none;
+        }
+
+        .marquee-text .accent { -webkit-text-stroke-color: var(--primary); opacity: 0.35; }
+
+        .stat-value { font-family: var(--heading-font); font-weight: 700; font-size: 4rem; color: var(--primary); line-height: 1; }
+        .stat-label { font-family: var(--body-font); font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.12em; margin-top: 0.5rem; }
+
+        .guarantee-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.5rem;
+            border: 1px solid rgba(176, 141, 87, 0.4);
+            border-radius: 0.75rem;
+            background: rgba(176, 141, 87, 0.08);
+            color: var(--warm);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .price-display { font-family: var(--heading-font); font-weight: 700; font-size: 5rem; color: var(--primary); line-height: 1; }
+
+        .offer-card {
+            background: var(--surface);
+            border: 1px solid rgba(43, 36, 32, 0.08);
+            border-radius: 1rem;
+            padding: 2rem 1.75rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(43, 36, 32, 0.05);
+        }
+
+        .offer-card-lead { background: rgba(176, 141, 87, 0.06); border-color: rgba(176, 141, 87, 0.25); }
+
+        .offer-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary), var(--warm), transparent);
+        }
+
+        .form-input {
+            background: rgba(43, 36, 32, 0.03);
+            border: 1px solid rgba(43, 36, 32, 0.15);
+            border-radius: 0.75rem;
+            padding: 0.875rem 1rem;
+            font-family: var(--body-font);
+            font-size: 1rem;
+            color: var(--text);
+            width: 100%;
+            outline: none;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+        .form-input::placeholder { color: rgba(43, 36, 32, 0.4); }
+        .form-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(194, 65, 12, 0.1); }
+        .form-input.error { border-color: rgba(220, 38, 38, 0.6); box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.08); }
+        .form-label { font-family: var(--body-font); font-size: 0.875rem; font-weight: 500; color: var(--text-muted); margin-bottom: 0.375rem; display: block; }
+        .form-error { font-size: 0.8rem; color: #DC2626; margin-top: 0.375rem; display: none; }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: var(--surface);
+            border: 1px solid rgba(43, 36, 32, 0.08);
+            border-radius: 0.75rem;
+        }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+
+        .heading-hero { font-size: clamp(3rem, 5vw + 1rem, 5rem); }
+        .heading-section { font-size: clamp(2rem, 3vw + 0.5rem, 3rem); }
+        .heading-subsection { font-size: clamp(1.5rem, 2vw + 0.5rem, 2.25rem); }
+        .heading-cta { font-size: clamp(2.5rem, 4vw + 0.5rem, 4rem); }
+        .subheading-hero { font-size: clamp(1.25rem, 1.5vw + 0.5rem, 1.75rem); }
+
+        .gs-fade-up { opacity: 0; transform: translateY(60px); }
+        .gs-slide-left { opacity: 0; transform: translateX(-80px); }
+        .gs-slide-right { opacity: 0; transform: translateX(80px); }
+        .gs-scale-up { opacity: 0; transform: scale(0.85); }
+        .gs-clip-reveal { clip-path: inset(0 0 100% 0); }
+
+        @media (max-width: 768px) {
+            .stat-value { font-size: 2.5rem; }
+            .price-display { font-size: 3rem; }
+            .btn-warm { padding: 0.9rem 2rem; font-size: 1.05rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="paper-grain" aria-hidden="true"></div>
+
+    <!-- NAV -->
+    <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500" role="navigation" aria-label="Main navigation">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="https://diannacarlton.com" class="flex items-center gap-3 no-underline" style="color: var(--text);">
+                <span class="font-heading text-xl">Dianna Carlton</span>
+            </a>
+            <a href="https://diannacarlton.com" class="text-sm transition-colors uppercase tracking-widest font-medium" style="color: var(--text-muted);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">
+                &larr; Back
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="relative min-h-screen flex items-center clip-diagonal overflow-hidden" style="padding-top: 80px;">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1920&q=70');"></div>
+            <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(251,247,240,0.88), rgba(251,247,240,0.82), var(--bg));"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 py-24 md:py-32">
+            <div class="max-w-4xl">
+                <div class="section-label gs-fade-up mb-6" data-stagger="1">Group Coaching Program &middot; $499</div>
+
+                <h1 class="font-heading heading-hero mb-6 gs-fade-up" data-stagger="2" style="color: var(--text);">
+                    How to Grow Your Fitness Brand
+                </h1>
+
+                <p class="font-heading subheading-hero leading-snug mb-6 gs-fade-up" data-stagger="3" style="color: var(--primary); font-weight: 600;">
+                    Turn the presence you already have into a brand that actually pays you.
+                </p>
+
+                <p class="text-lg max-w-2xl leading-relaxed mb-10 gs-fade-up" data-stagger="4" style="color: var(--text-muted);">
+                    For coaches, trainers, gym owners, and fitness creators who are great at what they do &mdash; but stuck on the business side. Over four focused weeks, we build the brand, the content systems, and the offers that turn followers and clients into real income.
+                </p>
+
+                <div class="gs-fade-up" data-stagger="5">
+                    <a href="#enroll" class="btn-warm">
+                        Enroll Now &mdash; $499
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-0 left-0 right-0 h-px" style="background: linear-gradient(90deg, transparent, var(--warm), transparent); transform: rotate(-2deg) translateY(-20px);"></div>
+    </section>
+
+    <!-- PROBLEM / SOLUTION -->
+    <section class="relative py-20 md:py-28 clip-diagonal-both" style="background: var(--surface-warm);">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
+
+                <div class="gs-slide-left">
+                    <div class="section-label mb-6" style="color: #DC2626;">
+                        <span style="color: #DC2626;">The Problem</span>
+                    </div>
+                    <h2 class="font-heading heading-subsection mb-6" style="color: var(--text);">
+                        You're good at fitness. The business part is where it stalls.
+                    </h2>
+                    <p class="text-lg leading-relaxed" style="color: var(--text-muted);">
+                        You post consistently, you know your craft, maybe you've even built a following. But the income doesn't match the effort. There's no clear offer, no system behind the content, and no plan for turning attention into paying clients. So you keep working harder instead of smarter &mdash; and it feels like you're transitioning toward something that never quite arrives.
+                    </p>
+                    <div class="mt-6 h-1 w-24" style="background: #DC2626;"></div>
+                </div>
+
+                <div class="gs-slide-right">
+                    <div class="section-label mb-6">The Solution</div>
+                    <h2 class="font-heading heading-subsection mb-6" style="color: var(--text);">
+                        A real system for building a fitness brand that earns
+                    </h2>
+                    <p class="text-lg leading-relaxed" style="color: var(--text-muted);">
+                        In four weeks we install the missing pieces: a clear brand and positioning, a content system that grows your audience on purpose, simple paid promotion to reach beyond your circle, and an offer people actually buy. You'll leave knowing exactly what to do each week to grow &mdash; and you'll do it alongside others making the same transition.
+                    </p>
+                    <div class="mt-6 h-1 w-24" style="background: var(--primary);"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFITS / WHAT YOU'LL LEARN -->
+    <section class="relative py-20 md:py-28" style="background: var(--bg);">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="section-label justify-center gs-fade-up mb-4">What You Get</div>
+                <h2 class="font-heading heading-section gs-fade-up" style="color: var(--text);">Four pillars of a fitness brand that pays</h2>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-6 md:gap-8" id="benefits-grid">
+                <div class="benefit-card gs-fade-up" data-stagger-group="benefits">
+                    <div class="flex items-center gap-4 mb-3">
+                    <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center" style="background: rgba(194, 65, 12, 0.08); border: 1px solid rgba(194, 65, 12, 0.18); border-radius: 0.5rem;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>
+                    </div>
+                    <h3 class="font-heading text-xl" style="color: var(--text);">Brand &amp; Positioning</h3>
+                    </div>
+                    <p class="leading-relaxed mt-1" style="color: var(--text-muted);">Get clear on who you serve, what makes you different, and how to present yourself so the right people instantly get it. A brand worth following starts here.</p>
+                </div>
+
+                <div class="benefit-card gs-fade-up" data-stagger-group="benefits">
+                    <div class="flex items-center gap-4 mb-3">
+                    <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center" style="background: rgba(194, 65, 12, 0.08); border: 1px solid rgba(194, 65, 12, 0.18); border-radius: 0.5rem;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <h3 class="font-heading text-xl" style="color: var(--text);">Content Systems</h3>
+                    </div>
+                    <p class="leading-relaxed mt-1" style="color: var(--text-muted);">Stop posting at random. Build a repeatable content system &mdash; what to post, when, and why &mdash; that grows your audience on purpose and saves you hours every week.</p>
+                </div>
+
+                <div class="benefit-card gs-fade-up" data-stagger-group="benefits">
+                    <div class="flex items-center gap-4 mb-3">
+                    <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center" style="background: rgba(194, 65, 12, 0.08); border: 1px solid rgba(194, 65, 12, 0.18); border-radius: 0.5rem;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <h3 class="font-heading text-xl" style="color: var(--text);">Simple Paid Growth</h3>
+                    </div>
+                    <p class="leading-relaxed mt-1" style="color: var(--text-muted);">Learn the fundamentals of affordable advertising to amplify your best content and reach far beyond your current following &mdash; without wasting money or feeling overwhelmed.</p>
+                </div>
+
+                <div class="benefit-card gs-fade-up" data-stagger-group="benefits">
+                    <div class="flex items-center gap-4 mb-3">
+                    <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center" style="background: rgba(194, 65, 12, 0.08); border: 1px solid rgba(194, 65, 12, 0.18); border-radius: 0.5rem;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <h3 class="font-heading text-xl" style="color: var(--text);">Offers That Sell</h3>
+                    </div>
+                    <p class="leading-relaxed mt-1" style="color: var(--text-muted);">Turn attention into income. We build an offer your audience actually wants to buy &mdash; priced right, positioned clearly, and ready to sell &mdash; so your brand finally pays you back.</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-12 gs-fade-up">
+                <a href="#enroll" class="btn-warm inline-flex">
+                    Enroll Now &mdash; $499
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+
+            <div class="mt-12 gs-fade-up overflow-hidden" style="border-radius: 0.75rem;">
+                <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1920&q=70" alt="Building a fitness brand" class="w-full object-cover" style="max-height: 500px; object-position: center;" onerror="this.parentElement.style.display='none'">
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="relative py-20 md:py-28 clip-diagonal" style="background: var(--surface-warm);">
+        <div class="absolute inset-0" style="background: linear-gradient(to bottom right, rgba(194,65,12,0.05), transparent);"></div>
+
+        <div class="relative max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-12 text-center">
+                <div>
+                    <div class="stat-value" data-counter="4">0</div>
+                    <div class="stat-label">Weeks To Transform</div>
+                </div>
+                <div>
+                    <div class="stat-value" data-counter="4">0</div>
+                    <div class="stat-label">Live Classes + Q&amp;A</div>
+                </div>
+                <div>
+                    <div class="stat-value" data-counter="1">0</div>
+                    <div class="stat-label">1:1 Strategy Call</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <section class="relative py-8 md:py-12 overflow-hidden" style="background: var(--bg);" aria-hidden="true">
+        <div class="marquee-track" id="marquee-sales">
+            <span class="marquee-text">Grow Your Fitness Brand</span>
+            <span class="marquee-text accent">&bull;</span>
+            <span class="marquee-text">Grow Your Fitness Brand</span>
+            <span class="marquee-text accent">&bull;</span>
+            <span class="marquee-text">Grow Your Fitness Brand</span>
+            <span class="marquee-text accent">&bull;</span>
+            <span class="marquee-text">Grow Your Fitness Brand</span>
+            <span class="marquee-text accent">&bull;</span>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="relative py-20 md:py-28" style="background: var(--bg);">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="section-label justify-center gs-fade-up mb-4">Results</div>
+                <h2 class="font-heading heading-section gs-fade-up" style="color: var(--text);">What fitness pros are saying</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="testimonial-card gs-slide-left">
+                    <blockquote class="relative z-10">
+                        <p class="text-lg leading-relaxed mb-6 italic" style="color: var(--text);">
+                            "I'd been a personal trainer for years with no real online income. After this program I launched a small group offer that filled in a week. The content system alone was worth the price."
+                        </p>
+                        <footer class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full flex items-center justify-center font-heading text-lg" style="background: var(--primary); color: #fff;">D</div>
+                            <div>
+                                <cite class="not-italic font-heading text-lg" style="color: var(--text);">Devon T.</cite>
+                                <p class="text-sm" style="color: var(--text-muted);">Personal trainer</p>
+                            </div>
+                        </footer>
+                    </blockquote>
+                </div>
+
+                <div class="testimonial-card gs-slide-right">
+                    <blockquote class="relative z-10">
+                        <p class="text-lg leading-relaxed mb-6 italic" style="color: var(--text);">
+                            "As a gym owner I knew fitness, not marketing. Dianna made the business side feel simple. We finally have a brand and an offer that brings members in instead of just hoping they walk by."
+                        </p>
+                        <footer class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full flex items-center justify-center font-heading text-lg" style="background: var(--primary); color: #fff;">S</div>
+                            <div>
+                                <cite class="not-italic font-heading text-lg" style="color: var(--text);">Sam K.</cite>
+                                <p class="text-sm" style="color: var(--text-muted);">Boutique gym owner</p>
+                            </div>
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="relative py-20 md:py-28 clip-diagonal-reverse" style="background: var(--surface-warm);">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="section-label justify-center gs-fade-up mb-4">FAQ</div>
+                <h2 class="font-heading heading-section gs-fade-up" style="color: var(--text);">Common Questions</h2>
+            </div>
+
+            <div class="gs-clip-reveal" id="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Who is this program for?</span>
+                        <span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">Coaches, personal trainers, gym owners, and fitness creators who want to turn their presence and expertise into real income. Whether you're just starting or already have a following, the system meets you where you are. No marketing experience required.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How are the classes delivered?</span>
+                        <span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">The program runs over four weeks with one 1-hour live class and one 1-hour live Q&amp;A each week. After enrolling, you'll receive the schedule and join links by email so you can plan around it.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What's included in the price?</span>
+                        <span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">Your $499 covers all four live classes, the four weekly Q&amp;A sessions, the Fitness Brand Workbook, and a 1-on-1 15-minute strategy call &mdash; everything you need to complete the program and walk away with a working system.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Do I need to spend money on ads?</span>
+                        <span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">No. The advertising module teaches the fundamentals so you understand how paid growth works and can use it when you're ready. Any ad spend is optional and entirely up to you.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PACKAGE + CHECKOUT FORM -->
+    <section id="enroll" class="relative py-20 md:py-28 scroll-mt-20" style="background: var(--bg);">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-14">
+                <div class="section-label justify-center gs-fade-up mb-4">Reserve Your Spot</div>
+                <h2 class="font-heading heading-section gs-fade-up" style="color: var(--text);">Ready to grow your fitness brand?</h2>
+            </div>
+
+            <div class="lg:grid lg:grid-cols-2 lg:gap-12 xl:gap-16 items-start">
+
+                <!-- LEFT: Package Details -->
+                <div class="mb-12 lg:mb-0">
+                    <div class="offer-card offer-card-lead mb-8 gs-fade-up">
+                        <div class="text-center">
+                            <div class="section-label justify-center mb-3">Investment</div>
+                            <p class="price-display mb-2">$499</p>
+                            <p class="font-body text-base" style="color: var(--text-muted);">One-time payment &middot; Full 4-week program</p>
+                        </div>
+                    </div>
+
+                    <div class="offer-card mb-8 gs-fade-up">
+                        <div class="section-label mb-5">What You Get</div>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3">
+                                <svg class="w-5 h-5 mt-0.5 shrink-0" style="color: var(--primary);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                <div>
+                                    <p class="font-body font-medium" style="color: var(--text);">4 Weekly Live Classes (1 hour each)</p>
+                                    <p class="font-body text-sm" style="color: var(--text-muted);">Four focused, hands-on sessions covering brand, content, advertising, and offers.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <svg class="w-5 h-5 mt-0.5 shrink-0" style="color: var(--primary);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                <div>
+                                    <p class="font-body font-medium" style="color: var(--text);">Weekly Live Q&amp;A (1 hour each week)</p>
+                                    <p class="font-body text-sm" style="color: var(--text-muted);">Bring your questions and get direct answers about your own brand and goals.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <svg class="w-5 h-5 mt-0.5 shrink-0" style="color: var(--primary);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                <div>
+                                    <p class="font-body font-medium" style="color: var(--text);">The Fitness Brand Workbook</p>
+                                    <p class="font-body text-sm" style="color: var(--text-muted);">A practical workbook to plan your content, build your offer, and track your growth.</p>
+                                </div>
+                            </div>
+
+                            <div class="pt-3 mt-3" style="border-top: 1px solid rgba(43,36,32,0.08);">
+                                <div class="flex items-start gap-3">
+                                    <svg class="w-5 h-5 mt-0.5 shrink-0" style="color: var(--warm);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                    <div>
+                                        <p class="font-body font-medium" style="color: var(--text);">1-on-1 15-Minute Strategy Call</p>
+                                        <p class="font-body text-sm" style="color: var(--text-muted);">A personal session to review your brand and map your next steps.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="offer-card gs-fade-up" style="border-left: 3px solid var(--warm);">
+                        <p class="font-body font-medium text-sm" style="color: var(--text);">For coaches, trainers, gym owners, and fitness creators.</p>
+                        <p class="font-body text-sm" style="color: var(--text-muted);">No marketing experience needed &mdash; just a willingness to show up and put the work in.</p>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Form -->
+                <div class="lg:sticky lg:top-28">
+                    <div class="offer-card gs-fade-up">
+                        <div class="mb-6">
+                            <div class="section-label">Reserve Your Spot</div>
+                            <h2 class="font-heading text-2xl md:text-3xl mb-2 mt-2" style="color: var(--text);">
+                                Ready to Get Started?
+                            </h2>
+                            <p class="font-body text-sm" style="color: var(--text-muted);">
+                                Fill in your details below and proceed to secure checkout.
+                            </p>
+                        </div>
+
+                        <form id="checkoutForm" class="space-y-4" novalidate>
+                            <div class="grid grid-cols-2 gap-3">
+                                <div>
+                                    <label for="firstName" class="form-label">First Name <span style="color: var(--warm);">*</span></label>
+                                    <input type="text" id="firstName" name="firstName" class="form-input" placeholder="First" required autocomplete="given-name">
+                                    <p class="form-error" id="firstNameError">Required.</p>
+                                </div>
+                                <div>
+                                    <label for="lastName" class="form-label">Last Name <span style="color: var(--warm);">*</span></label>
+                                    <input type="text" id="lastName" name="lastName" class="form-input" placeholder="Last" required autocomplete="family-name">
+                                    <p class="form-error" id="lastNameError">Required.</p>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="email" class="form-label">Email Address <span style="color: var(--warm);">*</span></label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="you@example.com" required autocomplete="email">
+                                <p class="form-error" id="emailError">Please enter a valid email address.</p>
+                            </div>
+                            <div>
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" class="form-input" placeholder="+1 (555) 123-4567" autocomplete="tel">
+                            </div>
+
+                            <div class="pt-2">
+                                <button type="submit" id="submitBtn" class="btn-warm w-full justify-center">
+                                    <span id="btnText">Proceed to Checkout &mdash; $499</span>
+                                    <svg id="btnArrow" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                                    <svg id="btnSpinner" class="w-5 h-5 animate-spin hidden" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                                </button>
+                            </div>
+
+                            <p id="formMessage" class="text-center font-body text-sm mt-2 hidden"></p>
+                        </form>
+
+                        <div class="mt-5 text-center">
+                            <div class="flex items-center justify-center gap-2" style="color: var(--text-muted);">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
+                                <p class="font-body text-xs">Secure payment powered by Stripe</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="flex justify-center mt-12 gs-fade-up">
+                <div class="guarantee-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    <span>Show up, do the work, and walk away with a real system to grow your brand.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="relative py-24 md:py-32 clip-diagonal" style="background: linear-gradient(135deg, var(--primary) 0%, var(--deep) 100%);">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full opacity-25" style="background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);"></div>
+
+        <div class="relative max-w-4xl mx-auto px-6 text-center">
+            <h2 class="font-heading heading-cta text-white mb-6 gs-fade-up">
+                Your brand is ready to grow up
+            </h2>
+            <p class="text-xl max-w-2xl mx-auto mb-10 gs-fade-up" style="color: rgba(255,255,255,0.85);">
+                Four weeks from now you could have a brand, a system, and an offer that finally pays you for the work you already do. Let's build it.
+            </p>
+            <div class="gs-fade-up">
+                <a href="#enroll" class="btn-warm inline-flex" style="background: #fff; color: var(--primary);">
+                    Enroll Now &mdash; $499
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="relative py-12" style="background: var(--bg); border-top: 1px solid rgba(43,36,32,0.08);">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-6">
+                <div class="flex items-center gap-3">
+                    <span class="font-heading text-lg" style="color: var(--text);">Dianna Carlton</span>
+                </div>
+                <div class="flex items-center gap-6 text-sm" style="color: var(--text-muted);">
+                    <a href="mailto:dianna@diannacarlton.com" class="transition-colors" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">dianna@diannacarlton.com</a>
+                    <span>&copy; <script>document.write(new Date().getFullYear())</script> Dianna Carlton</span>
+                </div>
+            </div>
+            <div class="text-center text-xs" style="color: var(--text-muted);">
+                <p class="mb-1">A Carlton Family Corporation Brand</p>
+                <p>6655 W. Sahara Ave., Suite B200, Las Vegas, NV 89146</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CDN Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+    <script>
+    (function() {
+        'use strict';
+
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            orientation: 'vertical',
+            gestureOrientation: 'vertical',
+            smoothWheel: true,
+            wheelMultiplier: 1,
+            touchMultiplier: 2,
+        });
+
+        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+        requestAnimationFrame(raf);
+
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => { lenis.raf(time * 1000); });
+        gsap.ticker.lagSmoothing(0);
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', (e) => {
+                const target = document.querySelector(anchor.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    lenis.scrollTo(target, { offset: -80 });
+                }
+            });
+        });
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const dur = prefersReducedMotion ? 0.01 : 0.8;
+        const ease = 'power3.out';
+
+        const nav = document.getElementById('main-nav');
+        ScrollTrigger.create({
+            start: 'top -80',
+            onUpdate: (self) => {
+                if (self.direction === 1 || self.scroll() > 80) {
+                    nav.classList.add('nav-solid');
+                } else {
+                    nav.classList.remove('nav-solid');
+                }
+            }
+        });
+
+        const heroEls = document.querySelectorAll('[data-stagger]');
+        const heroSorted = Array.from(heroEls).sort((a, b) =>
+            parseInt(a.dataset.stagger) - parseInt(b.dataset.stagger)
+        );
+        gsap.fromTo(heroSorted, { opacity: 0, y: 60 }, {
+            opacity: 1, y: 0, duration: dur, ease: ease, stagger: 0.15, delay: 0.3
+        });
+
+        gsap.utils.toArray('.gs-scale-up').forEach(el => {
+            gsap.fromTo(el, { opacity: 0, scale: 0.85 }, {
+                opacity: 1, scale: 1, duration: dur * 1.2, ease: 'power2.out',
+                scrollTrigger: { trigger: el, start: 'top 85%', end: 'top 50%', toggleActions: 'play none none none' }
+            });
+        });
+
+        gsap.utils.toArray('.gs-slide-left').forEach(el => {
+            gsap.fromTo(el, { opacity: 0, x: -80 }, {
+                opacity: 1, x: 0, duration: dur, ease: ease,
+                scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' }
+            });
+        });
+
+        gsap.utils.toArray('.gs-slide-right').forEach(el => {
+            gsap.fromTo(el, { opacity: 0, x: 80 }, {
+                opacity: 1, x: 0, duration: dur, ease: ease,
+                scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' }
+            });
+        });
+
+        const benefitsGrid = document.getElementById('benefits-grid');
+        if (benefitsGrid) {
+            const benefitCards = benefitsGrid.querySelectorAll('.benefit-card');
+            gsap.fromTo(benefitCards, { opacity: 0, y: 60 }, {
+                opacity: 1, y: 0, duration: dur, ease: ease, stagger: 0.12,
+                scrollTrigger: { trigger: benefitsGrid, start: 'top 80%', toggleActions: 'play none none none' }
+            });
+        }
+
+        document.querySelectorAll('[data-counter]').forEach(el => {
+            const raw = el.getAttribute('data-counter');
+            const match = raw.match(/^([^0-9]*)([0-9,.]+)(.*)$/);
+            if (!match) { el.textContent = raw; return; }
+            const prefix = match[1];
+            const numStr = match[2].replace(/,/g, '');
+            const suffix = match[3];
+            const target = parseFloat(numStr);
+            const hasDecimal = numStr.includes('.');
+            const decimalPlaces = hasDecimal ? numStr.split('.')[1].length : 0;
+            const useCommas = match[2].includes(',');
+            const counter = { val: 0 };
+            gsap.to(counter, {
+                val: target, duration: 2, ease: 'power2.out',
+                scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' },
+                onUpdate: () => {
+                    let display = hasDecimal ? counter.val.toFixed(decimalPlaces) : Math.round(counter.val).toString();
+                    if (useCommas) {
+                        display = Number(display).toLocaleString('en-US', { minimumFractionDigits: decimalPlaces, maximumFractionDigits: decimalPlaces });
+                    }
+                    el.textContent = prefix + display + suffix;
+                }
+            });
+        });
+
+        const marqueeTrack = document.getElementById('marquee-sales');
+        if (marqueeTrack) {
+            gsap.to(marqueeTrack, {
+                x: () => -(marqueeTrack.scrollWidth / 2),
+                ease: 'none',
+                scrollTrigger: { trigger: marqueeTrack.parentElement, start: 'top bottom', end: 'bottom top', scrub: 0.5 }
+            });
+        }
+
+        const faqContainer = document.getElementById('faq-container');
+        if (faqContainer) {
+            gsap.fromTo(faqContainer, { clipPath: 'inset(0 0 100% 0)' }, {
+                clipPath: 'inset(0 0 0% 0)', duration: dur * 1.5, ease: 'power3.inOut',
+                scrollTrigger: { trigger: faqContainer, start: 'top 85%', toggleActions: 'play none none none' }
+            });
+        }
+
+        gsap.utils.toArray('.gs-fade-up').forEach(el => {
+            if (el.hasAttribute('data-stagger')) return;
+            gsap.fromTo(el, { opacity: 0, y: 60 }, {
+                opacity: 1, y: 0, duration: dur, ease: ease,
+                scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' }
+            });
+        });
+
+        // FAQ ACCORDION
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const isActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(i => {
+                    i.classList.remove('active');
+                    i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+                if (!isActive) {
+                    item.classList.add('active');
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // ===== STRIPE CHECKOUT FORM =====
+        const WEBHOOK_URL = 'https://n8n.carltonaiservices.com/webhook/stripe-manage';
+        const OFFER_ID = 'OFFER_fitness_brand_coaching';
+        const PRICE_CENTS = 49900;
+
+        (function captureReferral() {
+            try {
+                const params = new URLSearchParams(window.location.search);
+                const ref = (params.get('ref') || params.get('referrer') || params.get('aff') || '').trim().slice(0, 120);
+                if (ref) { sessionStorage.setItem('tc_referral_code', ref); }
+            } catch (e) { /* ignore */ }
+        })();
+
+        function getReferralCode() {
+            try { return sessionStorage.getItem('tc_referral_code') || ''; }
+            catch (e) { return ''; }
+        }
+
+        const checkoutForm = document.getElementById('checkoutForm');
+        if (checkoutForm) {
+            checkoutForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                document.querySelectorAll('.form-input').forEach(el => el.classList.remove('error'));
+                document.querySelectorAll('.form-error').forEach(el => el.style.display = 'none');
+                document.getElementById('formMessage').classList.add('hidden');
+
+                const firstName = document.getElementById('firstName').value.trim();
+                const lastName = document.getElementById('lastName').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+
+                let valid = true;
+                if (!firstName) {
+                    document.getElementById('firstName').classList.add('error');
+                    document.getElementById('firstNameError').style.display = 'block';
+                    valid = false;
+                }
+                if (!lastName) {
+                    document.getElementById('lastName').classList.add('error');
+                    document.getElementById('lastNameError').style.display = 'block';
+                    valid = false;
+                }
+                if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    document.getElementById('email').classList.add('error');
+                    document.getElementById('emailError').style.display = 'block';
+                    valid = false;
+                }
+                if (!valid) return;
+
+                const referralCode = getReferralCode();
+
+                const btn = document.getElementById('submitBtn');
+                const btnText = document.getElementById('btnText');
+                const btnArrow = document.getElementById('btnArrow');
+                const btnSpinner = document.getElementById('btnSpinner');
+                btn.disabled = true;
+                btnText.textContent = 'Creating checkout session...';
+                btnArrow.classList.add('hidden');
+                btnSpinner.classList.remove('hidden');
+
+                try {
+                    const controller = new AbortController();
+                    const timeout = setTimeout(() => controller.abort(), 15000);
+
+                    const res = await fetch(WEBHOOK_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            operation: 'create_checkout_session',
+                            product_name: 'How to Grow Your Fitness Brand',
+                            amount: PRICE_CENTS,
+                            currency: 'usd',
+                            customer_email: email,
+                            customer_name: firstName + ' ' + lastName,
+                            first_name: firstName,
+                            last_name: lastName,
+                            customer_phone: phone,
+                            offer_type: 'fitness-brand-coaching',
+                            offer_name: 'How to Grow Your Fitness Brand',
+                            offer_id: OFFER_ID,
+                            referral_code: referralCode,
+                            success_url: 'https://diannacarlton.com/grow-your-fitness-brand/thank-you?session_id={CHECKOUT_SESSION_ID}',
+                            cancel_url: 'https://diannacarlton.com/grow-your-fitness-brand',
+                            metadata: {
+                                offer_id: OFFER_ID,
+                                offer_type: 'fitness-brand-coaching',
+                                referral_code: referralCode,
+                                customer_name: firstName + ' ' + lastName
+                            }
+                        }),
+                        signal: controller.signal
+                    });
+
+                    clearTimeout(timeout);
+                    const data = await res.json();
+
+                    if (data.checkout_url) {
+                        btnText.textContent = 'Redirecting to Stripe...';
+                        window.location.href = data.checkout_url;
+                    } else {
+                        throw new Error(data.error || 'Failed to create checkout session');
+                    }
+                } catch (err) {
+                    btn.disabled = false;
+                    btnText.textContent = 'Proceed to Checkout — $499';
+                    btnArrow.classList.remove('hidden');
+                    btnSpinner.classList.add('hidden');
+
+                    const msg = document.getElementById('formMessage');
+                    msg.textContent = err.name === 'AbortError'
+                        ? 'Request timed out. Please try again.'
+                        : 'Something went wrong. Please try again or contact us directly.';
+                    msg.className = 'text-center font-body text-sm mt-3';
+                    msg.style.color = '#DC2626';
+                    msg.classList.remove('hidden');
+                }
+            });
+        }
+
+    })();
+    </script>
+
+</body>
+</html>

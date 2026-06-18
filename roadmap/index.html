@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Roadmap: Hobbyist to Professional | Dianna Carlton</title>
+    <meta name="description" content="A free guide to turning your struggling social account into a primary income. The roadmap from hobbyist to professional for anyone in transition.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #C2410C;
+            --primary-glow: #EA580C;
+            --warm: #B08D57;
+            --warm-glow: #C9A227;
+            --deep: #5B3A52;
+            --bg: #FBF7F0;
+            --surface: #FFFFFF;
+            --surface-warm: #F3ECE0;
+            --text: #2B2420;
+            --text-muted: #6B5D52;
+            --heading-font: 'Fraunces', 'Georgia', serif;
+            --body-font: 'Inter', system-ui, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html.lenis, html.lenis body { height: auto; }
+        .lenis.lenis-smooth { scroll-behavior: auto !important; }
+        .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: var(--body-font);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .paper-grain {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 256px 256px;
+        }
+
+        .clip-diagonal-bottom { clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
+        @media (max-width: 768px) { .clip-diagonal-bottom { clip-path: polygon(0 0, 100% 0, 100% 93%, 0 100%); } }
+
+        .font-heading { font-family: var(--heading-font); font-weight: 600; letter-spacing: -0.015em; line-height: 1.1; }
+        .font-body { font-family: var(--body-font); }
+
+        .heading-hero { font-size: clamp(3rem, 5vw + 1rem, 5rem); }
+        .heading-section { font-size: clamp(2rem, 3vw + 0.5rem, 3rem); }
+        .subheading-hero { font-size: clamp(1.25rem, 1.5vw + 0.5rem, 1.75rem); }
+
+        .cta-btn {
+            background: var(--primary);
+            color: #ffffff;
+            font-family: var(--body-font);
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            font-size: 1.05rem;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 999px;
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+            box-shadow: 0 6px 18px rgba(194, 65, 12, 0.2);
+        }
+        .cta-btn:hover { transform: scale(1.04); background: var(--primary-glow); box-shadow: 0 10px 30px rgba(194, 65, 12, 0.3); }
+        .cta-btn:active { transform: scale(0.98); }
+
+        .nav-fixed {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            background: rgba(251, 247, 240, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(43, 36, 32, 0.08);
+        }
+
+        .section-label {
+            font-family: var(--body-font);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 0.75rem;
+            color: var(--warm);
+        }
+
+        .form-input {
+            background: rgba(43, 36, 32, 0.03);
+            border: 1px solid rgba(43, 36, 32, 0.15);
+            border-radius: 0.5rem;
+            color: var(--text);
+            font-family: var(--body-font);
+            font-size: 1rem;
+            padding: 0.875rem 1.25rem;
+            width: 100%;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            outline: none;
+        }
+        .form-input::placeholder { color: rgba(43, 36, 32, 0.4); }
+        .form-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(194, 65, 12, 0.12); }
+
+        .benefit-icon {
+            width: 56px; height: 56px;
+            display: flex; align-items: center; justify-content: center;
+            border: 2px solid var(--primary);
+            border-radius: 0.75rem;
+            color: var(--primary);
+        }
+
+        .accent-line { width: 48px; height: 3px; background: var(--warm); }
+
+        .anim-fade-up { opacity: 0; transform: translateY(60px); }
+        .anim-slide-left { opacity: 0; transform: translateX(-80px); }
+        .anim-slide-right { opacity: 0; transform: translateX(80px); }
+        .anim-scale-up { opacity: 0; transform: scale(0.85); }
+        .anim-clip-reveal { clip-path: inset(0 100% 0 0); }
+        .anim-stagger-up { opacity: 0; transform: translateY(40px); }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(251, 247, 240, 0.9) 0%, rgba(243, 236, 224, 0.82) 50%, rgba(251, 247, 240, 0.92) 100%);
+        }
+
+        .warm-divider {
+            width: 100%; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--warm), transparent);
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="paper-grain" aria-hidden="true"></div>
+
+    <!-- Fixed Nav -->
+    <nav class="nav-fixed">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="https://diannacarlton.com" class="flex items-center gap-3 no-underline">
+                <span class="font-heading text-xl" style="color: var(--text);">Dianna Carlton</span>
+            </a>
+            <a href="https://diannacarlton.com" class="font-body text-sm transition-colors duration-300 tracking-wide uppercase" style="color: var(--text-muted);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">
+                Back to Home
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="clip-diagonal-bottom relative min-h-[90vh] md:min-h-screen flex items-center overflow-hidden" style="padding-top: 80px;">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1920&q=70" alt="" class="w-full h-full object-cover" aria-hidden="true" onerror="this.style.display='none'">
+        </div>
+        <div class="hero-overlay"></div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-6 py-20 md:py-32 text-center">
+            <div class="section-label anim-stagger-up mb-4" data-anim="hero-stagger">
+                Free Download
+            </div>
+            <h1 class="font-heading heading-hero mb-6 anim-stagger-up" data-anim="hero-stagger" style="color: var(--text);">
+                Hobbyist to Professional
+            </h1>
+            <p class="font-body text-lg md:text-xl max-w-2xl mx-auto leading-relaxed anim-stagger-up" data-anim="hero-stagger" style="color: var(--text-muted);">
+                The roadmap to turning your struggling social account into a primary income &mdash; a clear, step-by-step path for anyone ready to make the transition from posting for fun to getting paid.
+            </p>
+        </div>
+
+        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-40">
+            <div class="w-px h-10 animate-pulse" style="background: linear-gradient(to bottom, var(--text-muted), transparent);"></div>
+        </div>
+    </section>
+
+    <!-- What You Get Section -->
+    <section class="relative py-24 md:py-32" style="background: var(--bg);">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+                <div class="w-full md:w-5/12 anim-slide-left" data-anim="whatyouget-image">
+                    <div class="relative">
+                        <div class="absolute -inset-4 opacity-20 blur-2xl" style="background: linear-gradient(to bottom right, var(--warm), transparent);"></div>
+                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1920&q=70" alt="The Roadmap guide cover" class="relative w-full max-w-sm mx-auto" style="border-radius: 0.75rem; box-shadow: 0 20px 50px rgba(43,36,32,0.18);" onerror="this.style.display='none'">
+                    </div>
+                </div>
+
+                <div class="w-full md:w-7/12">
+                    <div class="section-label anim-stagger-up mb-3" data-anim="whatyouget-text">
+                        What You Get
+                    </div>
+                    <div class="accent-line anim-clip-reveal mb-6" data-anim="whatyouget-line"></div>
+                    <h2 class="font-heading heading-section mb-6 anim-stagger-up" data-anim="whatyouget-text" style="color: var(--text);">
+                        The Roadmap to Turning Your Struggling Social Account Into a Primary Income
+                    </h2>
+                    <p class="font-body text-lg leading-relaxed anim-stagger-up" data-anim="whatyouget-text" style="color: var(--text-muted);">
+                        If your account isn't growing and definitely isn't paying, this free guide shows you the exact transition path from hobbyist to professional. Inside you'll find the stages most people skip, the mindset shifts that unlock momentum, and the simple systems that turn scattered posting into real income &mdash; all from someone building it in real time, right alongside you.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diagonal divider -->
+    <div class="w-full" style="height: 80px; background: linear-gradient(to right, var(--primary), var(--primary-glow)); clip-path: polygon(0 0, 100% 60%, 100% 100%, 0 40%);" aria-hidden="true"></div>
+
+    <!-- Benefits Section -->
+    <section class="relative py-24 md:py-32" style="background: var(--surface-warm);">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="section-label anim-fade-up mb-3" data-anim="benefits-header">
+                    Why This Works
+                </div>
+                <h2 class="font-heading heading-section anim-fade-up" data-anim="benefits-header" style="color: var(--text);">
+                    Your Next Step Forward
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+                <div class="text-center md:text-left anim-stagger-up" data-anim="benefit-item" data-delay="0">
+                    <div class="benefit-icon mx-auto md:mx-0 mb-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                        </svg>
+                    </div>
+                    <div class="accent-line mx-auto md:mx-0 mb-4"></div>
+                    <h3 class="font-heading text-2xl mb-3" style="color: var(--text);">A Clear Path</h3>
+                    <p class="font-body leading-relaxed" style="color: var(--text-muted);">No more guessing. See the exact stages between where you are now and an account that pays the bills &mdash; so you always know your next move.</p>
+                </div>
+
+                <div class="text-center md:text-left anim-stagger-up" data-anim="benefit-item" data-delay="0.15">
+                    <div class="benefit-icon mx-auto md:mx-0 mb-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <div class="accent-line mx-auto md:mx-0 mb-4"></div>
+                    <h3 class="font-heading text-2xl mb-3" style="color: var(--text);">Built For Transition</h3>
+                    <p class="font-body leading-relaxed" style="color: var(--text-muted);">Made for people in the middle of a change &mdash; of career, focus, or passion. Practical, encouraging, and relatable, not hype.</p>
+                </div>
+
+                <div class="text-center md:text-left anim-stagger-up" data-anim="benefit-item" data-delay="0.3">
+                    <div class="benefit-icon mx-auto md:mx-0 mb-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                        </svg>
+                    </div>
+                    <div class="accent-line mx-auto md:mx-0 mb-4"></div>
+                    <h3 class="font-heading text-2xl mb-3" style="color: var(--text);">Income, Not Just Likes</h3>
+                    <p class="font-body leading-relaxed" style="color: var(--text-muted);">Learn how attention actually becomes income &mdash; the offers, systems, and decisions that turn an audience into a primary source of revenue.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diagonal divider -->
+    <div class="w-full" style="height: 80px; background: linear-gradient(to left, var(--primary), var(--primary-glow)); clip-path: polygon(0 40%, 100% 0, 100% 60%, 0 100%);" aria-hidden="true"></div>
+
+    <!-- Email Capture Form Section -->
+    <section class="relative py-24 md:py-32" style="background: var(--bg);">
+        <div class="max-w-xl mx-auto px-6 text-center">
+            <div class="section-label anim-scale-up mb-3" data-anim="form-content">
+                No Cost. No Catch.
+            </div>
+            <h2 class="font-heading heading-section mb-4 anim-scale-up" data-anim="form-content" style="color: var(--text);">
+                Get Your Free Copy
+            </h2>
+            <p class="font-body mb-10 anim-scale-up" data-anim="form-content" style="color: var(--text-muted);">
+                Enter your details below and we'll send The Roadmap straight to your inbox.
+            </p>
+
+            <!-- TODO: confirm real lead-capture webhook endpoint -->
+            <form action="https://n8n.carltonaiservices.com/webhook/lead-capture" method="POST" class="space-y-4 anim-scale-up" data-anim="form-content" id="lead-form">
+                <div>
+                    <label for="name" class="sr-only">Your name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required class="form-input" autocomplete="name">
+                </div>
+                <div>
+                    <label for="email" class="sr-only">Your email</label>
+                    <input type="email" id="email" name="email" placeholder="Your Best Email" required class="form-input" autocomplete="email">
+                </div>
+                <div class="pt-2">
+                    <button type="submit" class="cta-btn w-full">
+                        Send Me The Roadmap
+                    </button>
+                </div>
+                <p class="font-body text-xs mt-3" style="color: var(--text-muted);">
+                    We respect your privacy. Unsubscribe at any time.
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Social Proof Line -->
+    <section class="relative py-12" style="background: var(--surface-warm);">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="warm-divider mb-8"></div>
+            <p class="font-body text-lg md:text-xl italic anim-slide-right" data-anim="social-proof" style="color: var(--text);">
+                "This guide finally made it click. I stopped posting randomly and started treating my account like the business it could be."
+            </p>
+            <div class="warm-divider mt-8"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative py-12" style="background: var(--bg); border-top: 1px solid rgba(43,36,32,0.08);">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <p class="font-heading text-lg mb-3" style="color: var(--text);">
+                Dianna Carlton
+            </p>
+            <a href="mailto:dianna@diannacarlton.com" class="font-body text-sm transition-colors duration-300" style="color: var(--text-muted);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">
+                dianna@diannacarlton.com
+            </a>
+            <div class="mt-4">
+                <a href="https://diannacarlton.com" class="font-body text-sm transition-colors duration-300 uppercase tracking-wider" style="color: var(--text-muted);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">
+                    Visit Our Website
+                </a>
+            </div>
+            <p class="font-body text-xs mt-6" style="color: var(--text-muted);">
+                &copy; <script>document.write(new Date().getFullYear())</script> Dianna Carlton. A Carlton Family Corporation Brand.
+            </p>
+        </div>
+    </footer>
+
+    <!-- CDN Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+    <script>
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            orientation: 'vertical',
+            smoothWheel: true,
+        });
+        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+        requestAnimationFrame(raf);
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => { lenis.raf(time * 1000); });
+        gsap.ticker.lagSmoothing(0);
+        gsap.registerPlugin(ScrollTrigger);
+
+        const heroItems = document.querySelectorAll('[data-anim="hero-stagger"]');
+        heroItems.forEach((el, i) => {
+            gsap.fromTo(el, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.8, delay: 0.3 + i * 0.2, ease: 'power3.out' });
+        });
+
+        gsap.fromTo('[data-anim="whatyouget-image"]', { opacity: 0, x: -80 }, {
+            opacity: 1, x: 0, duration: 1, ease: 'power3.out',
+            scrollTrigger: { trigger: '[data-anim="whatyouget-image"]', start: 'top 80%', toggleActions: 'play none none none' }
+        });
+
+        const whatItems = document.querySelectorAll('[data-anim="whatyouget-text"]');
+        whatItems.forEach((el, i) => {
+            gsap.fromTo(el, { opacity: 0, y: 40 }, {
+                opacity: 1, y: 0, duration: 0.7, delay: i * 0.15, ease: 'power3.out',
+                scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' }
+            });
+        });
+
+        gsap.fromTo('[data-anim="whatyouget-line"]', { clipPath: 'inset(0 100% 0 0)' }, {
+            clipPath: 'inset(0 0% 0 0)', duration: 0.8, ease: 'power2.inOut',
+            scrollTrigger: { trigger: '[data-anim="whatyouget-line"]', start: 'top 85%', toggleActions: 'play none none none' }
+        });
+
+        const benefitsHeader = document.querySelectorAll('[data-anim="benefits-header"]');
+        benefitsHeader.forEach((el, i) => {
+            gsap.fromTo(el, { opacity: 0, y: 50 }, {
+                opacity: 1, y: 0, duration: 0.8, delay: i * 0.15, ease: 'power3.out',
+                scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' }
+            });
+        });
+
+        const benefitItems = document.querySelectorAll('[data-anim="benefit-item"]');
+        benefitItems.forEach((el) => {
+            const delay = parseFloat(el.getAttribute('data-delay')) || 0;
+            gsap.fromTo(el, { opacity: 0, y: 40 }, {
+                opacity: 1, y: 0, duration: 0.7, delay: delay, ease: 'power3.out',
+                scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' }
+            });
+        });
+
+        const formItems = document.querySelectorAll('[data-anim="form-content"]');
+        formItems.forEach((el, i) => {
+            gsap.fromTo(el, { opacity: 0, scale: 0.9 }, {
+                opacity: 1, scale: 1, duration: 0.7, delay: i * 0.12, ease: 'back.out(1.4)',
+                scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' }
+            });
+        });
+
+        gsap.fromTo('[data-anim="social-proof"]', { opacity: 0, x: 80 }, {
+            opacity: 1, x: 0, duration: 0.9, ease: 'power3.out',
+            scrollTrigger: { trigger: '[data-anim="social-proof"]', start: 'top 85%', toggleActions: 'play none none none' }
+        });
+
+        const form = document.getElementById('lead-form');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const formData = new FormData(form);
+                const actionUrl = form.getAttribute('action');
+                fetch(actionUrl, { method: 'POST', body: formData })
+                    .then(() => { window.location.href = '/roadmap/thank-you/'; })
+                    .catch(() => { window.location.href = '/roadmap/thank-you/'; });
+            });
+        }
+    </script>
+</body>
+</html>
