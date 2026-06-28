@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Downloads &amp; Resources | Dianna Carlton</title>
+    <meta name="description" content="Get access to all of Dianna Carlton's free downloads and resources — practical guides for homeschooling parents, women building businesses, health, fitness, and using AI in real life. New guides added as they're released.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary: #C2410C;
+            --primary-glow: #EA580C;
+            --warm: #B08D57;
+            --warm-glow: #C9A227;
+            --deep: #5B3A52;
+            --bg: #FBF7F0;
+            --surface: #FFFFFF;
+            --surface-warm: #F3ECE0;
+            --text: #2B2420;
+            --text-muted: #6B5D52;
+            --heading-font: 'Fraunces', 'Georgia', serif;
+            --body-font: 'Inter', system-ui, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--body-font);
+            -webkit-font-smoothing: antialiased;
+            scroll-behavior: smooth;
+        }
+
+        body { overflow-x: hidden; background: var(--bg); }
+
+        .paper-grain {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 256px 256px;
+        }
+
+        .font-heading {
+            font-family: var(--heading-font);
+            font-weight: 600;
+            letter-spacing: -0.015em;
+            line-height: 1.1;
+        }
+
+        .font-body { font-family: var(--body-font); }
+
+        .clip-diagonal { clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); }
+
+        .nav-glass {
+            background: rgba(251, 247, 240, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .nav-scrolled {
+            background: rgba(251, 247, 240, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(43, 36, 32, 0.08);
+        }
+
+        .nav-link {
+            font-family: var(--body-font);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            text-decoration: none;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover { color: var(--primary); }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--warm);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after { width: 100%; }
+
+        .mobile-menu {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            background: rgba(251, 247, 240, 0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .mobile-menu.active { opacity: 1; pointer-events: all; }
+
+        .mobile-menu .nav-link {
+            font-family: var(--heading-font);
+            font-weight: 600;
+            font-size: 2rem;
+            letter-spacing: 0;
+            text-transform: none;
+            color: var(--text);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            width: 28px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+            z-index: 110;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: var(--text);
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+            .nav-desktop { display: none !important; }
+        }
+
+        .section-label {
+            font-family: var(--body-font);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--warm);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-label::before {
+            content: '';
+            display: block;
+            width: 2rem;
+            height: 2px;
+            background: var(--warm);
+        }
+
+        .section-label.centered::before { display: none; }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem 2.4rem;
+            background: var(--primary);
+            color: #fff;
+            font-family: var(--body-font);
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+            border: none;
+            border-radius: 999px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-glow);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(194, 65, 12, 0.25);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.18) 50%, transparent 60%);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .btn-primary:hover:not(:disabled)::after { transform: translateX(100%); }
+
+        .form-input {
+            background: rgba(43, 36, 32, 0.03);
+            border: 1px solid rgba(43, 36, 32, 0.15);
+            border-radius: 0.75rem;
+            padding: 0.875rem 1rem;
+            font-family: var(--body-font);
+            font-size: 1rem;
+            color: var(--text);
+            width: 100%;
+            outline: none;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+        .form-input::placeholder { color: rgba(43, 36, 32, 0.4); }
+        .form-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(194, 65, 12, 0.1); }
+        .form-input.error { border-color: rgba(220, 38, 38, 0.6); box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.08); }
+        .form-label { font-family: var(--body-font); font-size: 0.875rem; font-weight: 500; color: var(--text-muted); margin-bottom: 0.375rem; display: block; }
+        .form-error { font-size: 0.8rem; color: #DC2626; margin-top: 0.375rem; display: none; }
+
+        .signup-card {
+            background: var(--surface);
+            border: 1px solid rgba(43, 36, 32, 0.08);
+            border-radius: 1.25rem;
+            box-shadow: 0 16px 50px rgba(43, 36, 32, 0.10);
+        }
+
+        .perk-card {
+            background: var(--surface);
+            border: 1px solid rgba(43, 36, 32, 0.08);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 1px 3px rgba(43, 36, 32, 0.04);
+            transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s ease, border-color 0.35s ease;
+        }
+        .perk-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(194, 65, 12, 0.22);
+            box-shadow: 0 14px 36px rgba(43, 36, 32, 0.08);
+        }
+
+        .spinner {
+            width: 18px; height: 18px;
+            border: 2px solid rgba(255,255,255,0.4);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .heading-hero { font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem); }
+        .heading-section { font-size: clamp(2rem, 3vw + 0.5rem, 3rem); }
+
+        @media (max-width: 768px) {
+            .btn-primary { padding: 0.85rem 1.8rem; font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="paper-grain" aria-hidden="true"></div>
+
+    <!-- NAV -->
+    <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 nav-glass transition-all duration-500" role="navigation" aria-label="Main navigation">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="https://diannacarlton.com" class="flex items-center gap-3 no-underline z-50 relative" style="color: var(--text);">
+                <span class="font-heading text-xl">Dianna Carlton</span>
+            </a>
+
+            <div class="nav-desktop hidden md:flex items-center gap-8">
+                <a href="/#about" class="nav-link">About</a>
+                <a href="/#services" class="nav-link">Services</a>
+                <a href="/resources/" class="nav-link">Free Resources</a>
+                <a href="/group-coaching/" class="btn-primary" style="padding: 0.6rem 1.6rem; font-size: 0.9rem;">
+                    Work With Me
+                </a>
+            </div>
+
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="/#about" class="nav-link mobile-nav-link">About</a>
+        <a href="/#services" class="nav-link mobile-nav-link">Services</a>
+        <a href="/resources/" class="nav-link mobile-nav-link">Free Resources</a>
+        <a href="/group-coaching/" class="btn-primary mobile-nav-link" style="margin-top: 1rem;">
+            Work With Me
+        </a>
+    </div>
+
+    <!-- HERO / SIGNUP -->
+    <section class="relative min-h-screen flex items-center clip-diagonal overflow-hidden" style="background: var(--bg);">
+        <div class="absolute top-1/4 right-0 w-[560px] h-[560px] rounded-full opacity-20 z-0" style="background: radial-gradient(circle, var(--warm) 0%, transparent 70%);"></div>
+        <div class="absolute bottom-0 left-0 w-[420px] h-[420px] rounded-full opacity-15 z-0" style="background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 py-32 md:py-36 w-full">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+                <!-- Left: copy -->
+                <div>
+                    <div class="section-label mb-6" data-reveal>Free Library &middot; No Cost, Ever</div>
+                    <h1 class="font-heading heading-hero mb-6" data-reveal style="color: var(--text);">
+                        Get access to all of my <span style="color: var(--primary);">FREE</span> downloads &amp; resources
+                    </h1>
+                    <p class="text-lg md:text-xl leading-relaxed mb-6" data-reveal style="color: var(--text-muted);">
+                        I make things that actually make your life easier &mdash; practical guides, checklists, and templates I genuinely wish someone had handed me sooner. Whether you're homeschooling your kids, building a business from scratch, working on your health and fitness, or figuring out how to make AI work for a real, busy life, there's something here for you.
+                    </p>
+                    <p class="text-lg leading-relaxed mb-8" data-reveal style="color: var(--text-muted);">
+                        Drop your name and email below and you'll get instant access to the full library &mdash; plus every new free guide the moment I release it. No spam, no pressure. Just useful stuff.
+                    </p>
+
+                    <ul class="space-y-3" data-reveal>
+                        <li class="flex items-start gap-3" style="color: var(--text);">
+                            <svg class="flex-shrink-0 mt-1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                            <span>Instant access to every free download in the library</span>
+                        </li>
+                        <li class="flex items-start gap-3" style="color: var(--text);">
+                            <svg class="flex-shrink-0 mt-1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                            <span>New guides delivered as soon as they're ready</span>
+                        </li>
+                        <li class="flex items-start gap-3" style="color: var(--text);">
+                            <svg class="flex-shrink-0 mt-1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                            <span>Real, useful resources &mdash; never hype</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Right: signup card -->
+                <div class="signup-card p-7 md:p-9" data-reveal>
+                    <h2 class="font-heading text-2xl md:text-3xl mb-2" style="color: var(--text);">Unlock the library</h2>
+                    <p class="text-sm mb-6" style="color: var(--text-muted);">Free forever. Takes about 10 seconds.</p>
+
+                    <form id="signupForm" class="space-y-4" novalidate>
+                        <div>
+                            <label class="form-label" for="firstName">First name</label>
+                            <input type="text" id="firstName" name="firstName" class="form-input" placeholder="Jane" required autocomplete="given-name">
+                            <p class="form-error" id="firstNameError">Please enter your first name.</p>
+                        </div>
+                        <div>
+                            <label class="form-label" for="email">Email address</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="you@example.com" required autocomplete="email">
+                            <p class="form-error" id="emailError">Please enter a valid email address.</p>
+                        </div>
+
+                        <button type="submit" id="submitBtn" class="btn-primary w-full" style="margin-top: 0.5rem;">
+                            <span id="btnText">Get Free Access</span>
+                            <svg id="btnArrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            <span id="btnSpinner" class="spinner hidden" aria-hidden="true"></span>
+                        </button>
+
+                        <p id="formMessage" class="text-center font-body text-sm mt-2 hidden" role="status" aria-live="polite"></p>
+
+                        <p class="text-xs text-center mt-3" style="color: var(--text-muted);">
+                            We respect your inbox. Unsubscribe anytime.
+                        </p>
+                    </form>
+
+                    <div class="mt-6 pt-5" style="border-top: 1px solid rgba(43,36,32,0.08);">
+                        <p class="text-sm text-center" style="color: var(--text-muted);">
+                            Already a member?
+                            <button type="button" id="loginToggle" class="font-semibold underline" style="color: var(--primary); background: none; border: none; cursor: pointer;">Log in</button>
+                        </p>
+
+                        <form id="loginForm" class="space-y-3 mt-4 hidden" novalidate>
+                            <div>
+                                <label class="form-label" for="loginEmail">Your email</label>
+                                <input type="email" id="loginEmail" name="loginEmail" class="form-input" placeholder="you@example.com" required autocomplete="email">
+                                <p class="form-error" id="loginEmailError">Please enter a valid email address.</p>
+                            </div>
+                            <button type="submit" id="loginBtn" class="btn-primary w-full" style="background: transparent; color: var(--primary); border: 1px solid rgba(194,65,12,0.4);">
+                                <span id="loginBtnText">Log In &amp; Continue</span>
+                                <span id="loginBtnSpinner" class="spinner hidden" aria-hidden="true" style="border-color: rgba(194,65,12,0.35); border-top-color: var(--primary);"></span>
+                            </button>
+                            <p id="loginMessage" class="text-center font-body text-sm mt-1 hidden" role="status" aria-live="polite"></p>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT'S INSIDE -->
+    <section class="relative py-24 md:py-28" style="background: var(--surface-warm);">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-14">
+                <div class="section-label centered justify-center mb-4" data-reveal>What's Inside</div>
+                <h2 class="font-heading heading-section" data-reveal style="color: var(--text);">Made for real life &mdash; not the highlight reel</h2>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="perk-card" data-reveal>
+                    <div class="w-11 h-11 mb-4 flex items-center justify-center" style="background: rgba(194, 65, 12, 0.08); border: 1px solid rgba(194, 65, 12, 0.18); border-radius: 0.6rem;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                    </div>
+                    <h3 class="font-heading text-lg mb-2" style="color: var(--text);">Homeschooling</h3>
+                    <p class="text-sm leading-relaxed" style="color: var(--text-muted);">Planners, routines, and sanity-savers for teaching your kids without losing yourself in the process.</p>
+                </div>
+                <div class="perk-card" data-reveal>
+                    <div class="w-11 h-11 mb-4 flex items-center justify-center" style="background: rgba(194, 65, 12, 0.08); border: 1px solid rgba(194, 65, 12, 0.18); border-radius: 0.6rem;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+                    </div>
+                    <h3 class="font-heading text-lg mb-2" style="color: var(--text);">Building a Business</h3>
+                    <p class="text-sm leading-relaxed" style="color: var(--text-muted);">Templates and frameworks from someone who's actually building one &mdash; from offer to first real revenue.</p>
+                </div>
+                <div class="perk-card" data-reveal>
+                    <div class="w-11 h-11 mb-4 flex items-center justify-center" style="background: rgba(194, 65, 12, 0.08); border: 1px solid rgba(194, 65, 12, 0.18); border-radius: 0.6rem;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    </div>
+                    <h3 class="font-heading text-lg mb-2" style="color: var(--text);">Health &amp; Fitness</h3>
+                    <p class="text-sm leading-relaxed" style="color: var(--text-muted);">Simple, repeatable systems for taking care of your body when life is already full.</p>
+                </div>
+                <div class="perk-card" data-reveal>
+                    <div class="w-11 h-11 mb-4 flex items-center justify-center" style="background: rgba(194, 65, 12, 0.08); border: 1px solid rgba(194, 65, 12, 0.18); border-radius: 0.6rem;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg>
+                    </div>
+                    <h3 class="font-heading text-lg mb-2" style="color: var(--text);">AI for Real People</h3>
+                    <p class="text-sm leading-relaxed" style="color: var(--text-muted);">Plain-English guides to using AI to save hours every week &mdash; no tech background required.</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-12" data-reveal>
+                <a href="#top" id="scrollUpCta" class="btn-primary">
+                    Get Instant Access
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="relative py-16 md:py-20" style="background: var(--bg); border-top: 1px solid rgba(43,36,32,0.08);">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12 md:gap-16 mb-12">
+                <div>
+                    <a href="https://diannacarlton.com" class="flex items-center gap-3 mb-4 no-underline" style="color: var(--text);">
+                        <span class="font-heading text-2xl">Dianna Carlton</span>
+                    </a>
+                    <p class="text-sm leading-relaxed" style="color: var(--text-muted);">Building my business while building myself &mdash; and helping you do the same. Business, mindset, and systems coaching for people in transition.</p>
+                </div>
+                <div>
+                    <h4 class="font-heading text-lg mb-4" style="color: var(--text);">Contact</h4>
+                    <div class="space-y-3 text-sm">
+                        <a href="mailto:dianna@diannacarlton.com" class="flex items-center gap-3 transition-colors" style="color: var(--text-muted);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            dianna@diannacarlton.com
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-heading text-lg mb-4" style="color: var(--text);">Explore</h4>
+                    <div class="space-y-3 text-sm">
+                        <a href="/#services" class="block transition-colors" style="color: var(--text-muted);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Services</a>
+                        <a href="/resources/" class="block transition-colors" style="color: var(--text-muted);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Free Resources</a>
+                        <a href="/free-resources/" class="block transition-colors" style="color: var(--text-muted);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">My Library</a>
+                        <a href="/group-coaching/" class="block transition-colors" style="color: var(--text-muted);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Coaching Program</a>
+                        <a href="/disclaimer/" class="block transition-colors" style="color: var(--text-muted);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Earnings &amp; Results Disclaimer</a>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm" style="border-top: 1px solid rgba(43,36,32,0.06); color: var(--text-muted);">
+                <span>&copy; <script>document.write(new Date().getFullYear())</script> Dianna Carlton. A Carlton Family Corporation Brand.</span>
+                <span>6655 W. Sahara Ave., Suite B200, Las Vegas, NV 89146</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    (function() {
+        'use strict';
+
+        var WEBHOOK_URL = 'https://n8n.carltonaiservices.com/webhook/dianna-newsletter-signup';
+        var MEMBERS_URL = '/free-resources/';
+
+        /* ---------- cookie + storage helpers (robust, Safari/iOS-safe) ---------- */
+        function setMemberFlag() {
+            var oneYear = 60 * 60 * 24 * 365;
+            try {
+                var secure = (location.protocol === 'https:') ? '; Secure' : '';
+                document.cookie = 'dc_member=1; path=/; max-age=' + oneYear + '; SameSite=Lax' + secure;
+            } catch (e) { /* ignore */ }
+            try { localStorage.setItem('dc_member', '1'); } catch (e) { /* ignore */ }
+        }
+
+        /* ---------- nav scroll + mobile menu ---------- */
+        var nav = document.getElementById('main-nav');
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 80) {
+                nav.classList.add('nav-scrolled'); nav.classList.remove('nav-glass');
+            } else {
+                nav.classList.remove('nav-scrolled'); nav.classList.add('nav-glass');
+            }
+        }, { passive: true });
+
+        var hamburger = document.getElementById('hamburger-btn');
+        var mobileMenu = document.getElementById('mobile-menu');
+        hamburger.addEventListener('click', function () {
+            var isActive = hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', String(isActive));
+            document.body.style.overflow = isActive ? 'hidden' : '';
+        });
+        document.querySelectorAll('.mobile-nav-link').forEach(function (link) {
+            link.addEventListener('click', function () {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            });
+        });
+
+        /* ---------- light reveal animation (no heavy libs) ---------- */
+        var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var revealEls = document.querySelectorAll('[data-reveal]');
+        if (prefersReduced || !('IntersectionObserver' in window)) {
+            revealEls.forEach(function (el) { el.style.opacity = '1'; el.style.transform = 'none'; });
+        } else {
+            revealEls.forEach(function (el) {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(28px)';
+                el.style.transition = 'opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1)';
+            });
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'none';
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+            revealEls.forEach(function (el) { io.observe(el); });
+        }
+
+        /* ---------- scroll-up CTA ---------- */
+        var scrollUpCta = document.getElementById('scrollUpCta');
+        if (scrollUpCta) {
+            scrollUpCta.addEventListener('click', function (e) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: prefersReduced ? 'auto' : 'smooth' });
+                var fn = document.getElementById('firstName');
+                if (fn) { setTimeout(function () { try { fn.focus(); } catch (e2) {} }, prefersReduced ? 0 : 600); }
+            });
+        }
+
+        var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        function showMsg(el, text, isError) {
+            el.textContent = text;
+            el.style.color = isError ? '#DC2626' : 'var(--primary)';
+            el.classList.remove('hidden');
+        }
+
+        async function postSignup(payload) {
+            var controller = new AbortController();
+            var timeout = setTimeout(function () { controller.abort(); }, 15000);
+            try {
+                var res = await fetch(WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload),
+                    signal: controller.signal
+                });
+                clearTimeout(timeout);
+                var data = {};
+                try { data = await res.json(); } catch (e) { data = {}; }
+                if (!res.ok) { throw new Error('bad_status'); }
+                return data;
+            } finally {
+                clearTimeout(timeout);
+            }
+        }
+
+        /* ---------- SIGN UP form ---------- */
+        var signupForm = document.getElementById('signupForm');
+        signupForm.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            var fnEl = document.getElementById('firstName');
+            var emEl = document.getElementById('email');
+            var fnErr = document.getElementById('firstNameError');
+            var emErr = document.getElementById('emailError');
+            var msg = document.getElementById('formMessage');
+
+            [fnEl, emEl].forEach(function (el) { el.classList.remove('error'); });
+            fnErr.style.display = 'none'; emErr.style.display = 'none';
+            msg.classList.add('hidden');
+
+            var firstName = fnEl.value.trim();
+            var email = emEl.value.trim();
+
+            var valid = true;
+            if (!firstName) { fnEl.classList.add('error'); fnErr.style.display = 'block'; valid = false; }
+            if (!email || !EMAIL_RE.test(email)) { emEl.classList.add('error'); emErr.style.display = 'block'; valid = false; }
+            if (!valid) return;
+
+            var btn = document.getElementById('submitBtn');
+            var btnText = document.getElementById('btnText');
+            var btnArrow = document.getElementById('btnArrow');
+            var btnSpinner = document.getElementById('btnSpinner');
+            btn.disabled = true;
+            btnText.textContent = 'Unlocking...';
+            btnArrow.classList.add('hidden');
+            btnSpinner.classList.remove('hidden');
+
+            try {
+                var data = await postSignup({ email: email, first_name: firstName, last_name: '' });
+                if (data && data.ok) {
+                    setMemberFlag();
+                    btnText.textContent = 'You’re in! Redirecting...';
+                    showMsg(msg, 'Success! Taking you to your free downloads...', false);
+                    window.location.href = MEMBERS_URL;
+                } else {
+                    throw new Error('not_ok');
+                }
+            } catch (err) {
+                btn.disabled = false;
+                btnText.textContent = 'Get Free Access';
+                btnArrow.classList.remove('hidden');
+                btnSpinner.classList.add('hidden');
+                showMsg(msg,
+                    (err && err.name === 'AbortError')
+                        ? 'That took too long. Please check your connection and try again.'
+                        : 'Something went wrong. Please try again, or email dianna@diannacarlton.com.',
+                    true);
+            }
+        });
+
+        /* ---------- LOG IN (email only) ---------- */
+        var loginToggle = document.getElementById('loginToggle');
+        var loginForm = document.getElementById('loginForm');
+        loginToggle.addEventListener('click', function () {
+            var hidden = loginForm.classList.toggle('hidden');
+            if (!hidden) {
+                var le = document.getElementById('loginEmail');
+                if (le) { try { le.focus(); } catch (e) {} }
+            }
+        });
+
+        loginForm.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            var leEl = document.getElementById('loginEmail');
+            var leErr = document.getElementById('loginEmailError');
+            var msg = document.getElementById('loginMessage');
+            leEl.classList.remove('error'); leErr.style.display = 'none'; msg.classList.add('hidden');
+
+            var email = leEl.value.trim();
+            if (!email || !EMAIL_RE.test(email)) {
+                leEl.classList.add('error'); leErr.style.display = 'block'; return;
+            }
+
+            var btn = document.getElementById('loginBtn');
+            var btnText = document.getElementById('loginBtnText');
+            var btnSpinner = document.getElementById('loginBtnSpinner');
+            btn.disabled = true;
+            btnText.textContent = 'Checking...';
+            btnSpinner.classList.remove('hidden');
+
+            try {
+                // Backend dedupes by email, so this never creates a duplicate.
+                var data = await postSignup({ email: email, first_name: '', last_name: '' });
+                if (data && data.ok) {
+                    setMemberFlag();
+                    btnText.textContent = 'Welcome back!';
+                    showMsg(msg, 'Logging you in...', false);
+                    window.location.href = MEMBERS_URL;
+                } else {
+                    throw new Error('not_ok');
+                }
+            } catch (err) {
+                btn.disabled = false;
+                btnText.textContent = 'Log In & Continue';
+                btnSpinner.classList.add('hidden');
+                showMsg(msg,
+                    (err && err.name === 'AbortError')
+                        ? 'That took too long. Please try again.'
+                        : 'We couldn’t log you in just now. Please try again.',
+                    true);
+            }
+        });
+
+    })();
+    </script>
+
+</body>
+</html>
