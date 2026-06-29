@@ -375,6 +375,7 @@
         'use strict';
 
         var WEBHOOK_URL = 'https://n8n.carltonaiservices.com/webhook/dianna-newsletter-signup';
+        var THANKYOU_URL = '/resources/thank-you/';
         var REST_BASE = 'https://carltondb.72.60.67.2.sslip.io/rest/v1';
         var ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlzcyI6ImNhcmx0b24iLCJpYXQiOjE3ODE2OTUzMDksImV4cCI6MjA5NzA1NTMwOX0.Tazw1TnCAXYY6Na6E7muccoLad3NrJltf9GUCPbNnSc';
         var LEAD_MAGNETS_URL = REST_BASE + '/lead_magnets?brand_id=eq.dianna&status=eq.published&order=published_at.desc&select=id,title,slug,synopsis,value_hook,themes,cover_image_url,pdf_url,published_at';
@@ -620,7 +621,10 @@
 
             try {
                 var data = await postSignup({ email: email, first_name: firstName, last_name: '' });
-                if (data && data.ok) { grantAccess(); }
+                if (data && data.ok) {
+                    if (data.status === 'verified') { grantAccess(); }
+                    else { window.location.href = THANKYOU_URL + '?email=' + encodeURIComponent(email); }
+                }
                 else { throw new Error('not_ok'); }
             } catch (err) {
                 btn.disabled = false; btnText.textContent = 'Get Free Access'; spinner.classList.add('hidden');
@@ -647,9 +651,12 @@
             btn.disabled = true; btnText.textContent = 'Checking...'; spinner.classList.remove('hidden');
 
             try {
-                // Backend dedupes by email, so logging in never creates a duplicate.
+                // Backend dedupes by email and reports whether this address is confirmed.
                 var data = await postSignup({ email: email, first_name: '', last_name: '' });
-                if (data && data.ok) { grantAccess(); }
+                if (data && data.ok) {
+                    if (data.status === 'verified') { grantAccess(); }
+                    else { window.location.href = THANKYOU_URL + '?email=' + encodeURIComponent(email); }
+                }
                 else { throw new Error('not_ok'); }
             } catch (err) {
                 btn.disabled = false; btnText.textContent = 'Log In & Continue'; spinner.classList.add('hidden');
@@ -660,8 +667,22 @@
         });
 
         /* ---------- initial access check ---------- */
-        if (isMember()) { showLibrary(); }
-        else { showGate(); }
+        (function () {
+            if (isMember()) { showLibrary(); return; }
+            showGate();
+            // arriving from the email confirmation link: open Log in, prefill email, celebrate
+            try {
+                var params = new URLSearchParams(location.search);
+                if (params.get('confirmed') === '1') {
+                    var qEmail = (params.get('email') || '').trim();
+                    tabLogin.click();
+                    var le = document.getElementById('loginEmail');
+                    if (le && qEmail) le.value = qEmail;
+                    var msg = document.getElementById('loginMessage');
+                    if (msg) showMsg(msg, 'Your email is confirmed! Log in below to open your free library.', false);
+                }
+            } catch (e) { /* ignore */ }
+        })();
 
     })();
     </script>

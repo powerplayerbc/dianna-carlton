@@ -500,6 +500,7 @@
 
         var WEBHOOK_URL = 'https://n8n.carltonaiservices.com/webhook/dianna-newsletter-signup';
         var MEMBERS_URL = '/free-resources/';
+        var THANKYOU_URL = '/resources/thank-you/';
 
         /* ---------- cookie + storage helpers (robust, Safari/iOS-safe) ---------- */
         function setMemberFlag() {
@@ -635,10 +636,18 @@
             try {
                 var data = await postSignup({ email: email, first_name: firstName, last_name: '' });
                 if (data && data.ok) {
-                    setMemberFlag();
-                    btnText.textContent = 'You’re in! Redirecting...';
-                    showMsg(msg, 'Success! Taking you to your free downloads...', false);
-                    window.location.href = MEMBERS_URL;
+                    if (data.status === 'verified') {
+                        // already-confirmed member used the signup form — let them straight in
+                        setMemberFlag();
+                        btnText.textContent = 'You’re in! Redirecting...';
+                        showMsg(msg, 'Welcome back! Taking you to your downloads...', false);
+                        window.location.href = MEMBERS_URL;
+                    } else {
+                        // new (or unconfirmed) — confirm email first
+                        btnText.textContent = 'Check your email!';
+                        showMsg(msg, 'Almost there — check your inbox to confirm.', false);
+                        window.location.href = THANKYOU_URL + '?email=' + encodeURIComponent(email);
+                    }
                 } else {
                     throw new Error('not_ok');
                 }
@@ -687,13 +696,20 @@
             btnSpinner.classList.remove('hidden');
 
             try {
-                // Backend dedupes by email, so this never creates a duplicate.
+                // Backend dedupes by email and tells us whether this address is confirmed.
                 var data = await postSignup({ email: email, first_name: '', last_name: '' });
                 if (data && data.ok) {
-                    setMemberFlag();
-                    btnText.textContent = 'Welcome back!';
-                    showMsg(msg, 'Logging you in...', false);
-                    window.location.href = MEMBERS_URL;
+                    if (data.status === 'verified') {
+                        setMemberFlag();
+                        btnText.textContent = 'Welcome back!';
+                        showMsg(msg, 'Logging you in...', false);
+                        window.location.href = MEMBERS_URL;
+                    } else {
+                        // not confirmed yet — we just re-sent the confirmation link
+                        btnText.textContent = 'Check your email!';
+                        showMsg(msg, 'Please confirm your email — we just re-sent your link.', false);
+                        window.location.href = THANKYOU_URL + '?email=' + encodeURIComponent(email);
+                    }
                 } else {
                     throw new Error('not_ok');
                 }
@@ -708,6 +724,12 @@
                     true);
             }
         });
+
+        /* ---------- expired / invalid confirmation link ---------- */
+        if (/[?&]confirm=invalid/.test(location.search)) {
+            var fm = document.getElementById('formMessage');
+            if (fm) showMsg(fm, 'That confirmation link has expired or already been used. Pop your email in again and we’ll send a fresh one.', true);
+        }
 
     })();
     </script>
