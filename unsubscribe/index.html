@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Unsubscribe | Dianna Carlton</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--primary:#C2410C;--glow:#EA580C;--deep:#5B3A52;--bg:#FBF7F0;--surface:#FFFFFF;--border:#E7DDCD;--text:#2B2420;--muted:#6B5D52;--head:'Fraunces','Georgia',serif;--body:'Inter',system-ui,sans-serif;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html,body{background:var(--bg);color:var(--text);font-family:var(--body);-webkit-font-smoothing:antialiased;}
+    .wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;}
+    .card{width:100%;max-width:520px;background:var(--surface);border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(91,58,82,.12);}
+    .bar{height:6px;background:linear-gradient(90deg,var(--glow),var(--primary) 55%,var(--deep));}
+    .pad{padding:38px 40px 40px;}
+    .brand{font-size:13px;letter-spacing:5px;color:var(--primary);text-transform:uppercase;font-weight:700;text-align:center;}
+    h1{font-family:var(--head);font-size:27px;line-height:1.2;color:var(--text);font-weight:600;margin:18px 0 0;text-align:center;}
+    p{font-size:15px;line-height:1.6;color:var(--muted);margin:14px 0 0;text-align:center;}
+    .em{color:var(--text);font-weight:600;}
+    .field{margin:22px 0 0;}
+    label{display:block;font-size:13px;color:var(--muted);margin-bottom:7px;}
+    input{width:100%;padding:13px 15px;font-size:15px;font-family:var(--body);border:1px solid var(--border);border-radius:10px;background:#fff;color:var(--text);}
+    input:focus{outline:none;border-color:var(--primary);}
+    .btn{display:block;width:100%;margin:22px 0 0;padding:15px 24px;font-family:var(--body);font-size:16px;font-weight:700;color:#fff;background:var(--primary);border:none;border-radius:999px;cursor:pointer;transition:opacity .15s;}
+    .btn:hover{opacity:.92;}
+    .btn:disabled{opacity:.55;cursor:default;}
+    .foot{font-size:12px;color:#9A8F82;margin-top:22px;text-align:center;}
+    .foot a{color:var(--primary);font-weight:600;text-decoration:none;}
+    .hide{display:none;}
+    .ok-ico{font-size:42px;text-align:center;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="bar"></div>
+      <div class="pad">
+        <div class="brand">Dianna&nbsp;Carlton</div>
+
+        <!-- STATE: form -->
+        <div id="form-state">
+          <h1>Unsubscribe</h1>
+          <p id="lead">We're sorry to see you go. Confirm below and you'll stop receiving emails from Dianna.</p>
+          <div class="field" id="email-field">
+            <label for="email">Your email address</label>
+            <input id="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com">
+          </div>
+          <button class="btn" id="go">Unsubscribe me</button>
+          <p class="foot" id="err" style="color:#B91C1C;"></p>
+          <p class="foot">Changed your mind? You don't have to do anything &mdash; just close this page.</p>
+        </div>
+
+        <!-- STATE: success -->
+        <div id="done-state" class="hide">
+          <div class="ok-ico">🤎</div>
+          <h1>You're unsubscribed</h1>
+          <p>You won't receive any more emails from Dianna. Take care of yourself.</p>
+          <p class="foot">Leave by mistake? You can re-join anytime at <a href="https://diannacarlton.com/free-resources">diannacarlton.com/free-resources</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      var params = new URLSearchParams(window.location.search);
+      var emailFromUrl = (params.get('e') || params.get('email') || '').trim();
+      var input = document.getElementById('email');
+      var emailField = document.getElementById('email-field');
+      var lead = document.getElementById('lead');
+      var btn = document.getElementById('go');
+      var err = document.getElementById('err');
+      var isEmail = function(v){ return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v); };
+
+      if (isEmail(emailFromUrl)) {
+        // Identified link (from a personal email): show the address, hide the input.
+        input.value = emailFromUrl;
+        emailField.classList.add('hide');
+        lead.innerHTML = "We're sorry to see you go. You're about to unsubscribe <span class='em'>" +
+          emailFromUrl.replace(/</g,'&lt;') + "</span> from Dianna's emails.";
+      }
+
+      btn.addEventListener('click', function(){
+        err.textContent = '';
+        var email = (input.value || '').trim().toLowerCase();
+        if (!isEmail(email)) { err.textContent = 'Please enter a valid email address.'; return; }
+        btn.disabled = true; btn.textContent = 'Unsubscribing…';
+        fetch('/api/unsubscribe', {
+          method: 'POST', headers: {'Content-Type':'application/json'},
+          body: JSON.stringify({ email: email })
+        }).then(function(r){ return r.json().catch(function(){ return {}; }); })
+          .then(function(d){
+            if (d && d.ok) {
+              document.getElementById('form-state').classList.add('hide');
+              document.getElementById('done-state').classList.remove('hide');
+            } else {
+              btn.disabled = false; btn.textContent = 'Unsubscribe me';
+              err.textContent = 'Something went wrong. Please email hello@diannacarlton.com and we’ll remove you.';
+            }
+          }).catch(function(){
+            btn.disabled = false; btn.textContent = 'Unsubscribe me';
+            err.textContent = 'Network error. Please try again, or email hello@diannacarlton.com.';
+          });
+      });
+    })();
+  </script>
+</body>
+</html>
