@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Received | Meta Advertising Management | Dianna Carlton</title>
+    <meta name="description" content="Your Meta Advertising Management subscription is confirmed.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary: #C2410C; --primary-glow: #EA580C; --warm: #B08D57; --warm-glow: #C9A227;
+            --deep: #5B3A52; --bg: #FBF7F0; --surface: #FFFFFF; --surface-warm: #F3ECE0;
+            --text: #2B2420; --text-muted: #6B5D52; --line:#E7DDCD;
+            --heading-font: 'Fraunces', 'Georgia', serif; --body-font: 'Inter', system-ui, sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { background: var(--bg); color: var(--text); font-family: var(--body-font); -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+        body { overflow-x: hidden; background: var(--bg); }
+        .paper-grain {
+            position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-repeat: repeat; background-size: 256px 256px;
+        }
+        .font-heading { font-family: var(--heading-font); font-weight: 600; letter-spacing: -0.015em; line-height: 1.1; }
+        .font-body { font-family: var(--body-font); }
+        .nav-fixed {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(251, 247, 240, 0.85);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(43, 36, 32, 0.08);
+        }
+        .section-label { font-family: var(--body-font); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--warm); display: inline-flex; align-items: center; gap: 0.75rem; }
+        .section-label.center::before { content: ''; display: block; width: 2rem; height: 2px; background: var(--warm); }
+        .btn-outline { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.7rem 1.5rem; border-radius: 999px; border: 1px solid rgba(43,36,32,0.18); color: var(--text); font-weight: 500; font-size: 0.95rem; text-decoration: none; transition: all 0.3s cubic-bezier(0.16,1,0.3,1); }
+        .btn-outline:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
+        .heading-hero { font-size: clamp(2.5rem, 5vw + 1rem, 4rem); }
+        @keyframes scaleIn { from { opacity:0; transform: scale(0.85);} to {opacity:1; transform:scale(1);} }
+        @keyframes checkDraw { from { stroke-dashoffset: 100; } to { stroke-dashoffset: 0; } }
+        .check-circle { animation: scaleIn 0.6s cubic-bezier(0.16,1,0.3,1) 0.1s both; }
+        .check-circle path { stroke-dasharray: 100; animation: checkDraw 0.8s cubic-bezier(0.16,1,0.3,1) 0.4s both; }
+        @keyframes fadeUp { from { opacity:0; transform: translateY(30px);} to {opacity:1; transform:translateY(0);} }
+        .a1 { animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.3s both; }
+        .a2 { animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.45s both; }
+        .a3 { animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.6s both; }
+        .reveal { opacity: 0; transform: translateY(36px); transition: opacity 1s cubic-bezier(0.16,1,0.3,1), transform 1s cubic-bezier(0.16,1,0.3,1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .highlight { color: var(--primary); font-weight: 600; }
+        .step-line { position: absolute; left: 1.25rem; top: 2.75rem; bottom: -2rem; width: 2px; background: linear-gradient(180deg, var(--warm), transparent); }
+        .section-break { height: 2px; max-width: 16rem; margin: 0 auto; background: linear-gradient(90deg, transparent, rgba(176,141,87,0.4), rgba(194,65,12,0.25), transparent); }
+        .receipt { border:1px solid var(--line); border-radius:0.9rem; background:var(--surface); overflow:hidden; }
+        .receipt .row { display:flex; justify-content:space-between; gap:1rem; padding:0.85rem 1.25rem; border-bottom:1px solid var(--line); font-size:0.95rem; }
+        .receipt .row:last-child { border-bottom:none; }
+        .receipt .row .lab { color:var(--text-muted); }
+        .receipt .row .val { font-weight:600; text-align:right; }
+    </style>
+</head>
+<body>
+    <div class="paper-grain" aria-hidden="true"></div>
+
+    <!-- NAV -->
+    <nav class="nav-fixed">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="/" class="font-heading text-xl tracking-tight no-underline" style="color: var(--text);">Dianna Carlton</a>
+            <a href="/" class="btn-outline">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                Back to Home
+            </a>
+        </div>
+    </nav>
+
+    <main class="relative z-10">
+
+        <!-- HERO -->
+        <section class="min-h-[55vh] flex flex-col items-center justify-center px-6 pt-32 pb-14 text-center">
+            <div class="max-w-3xl mx-auto">
+                <div class="check-circle mb-8 inline-flex items-center justify-center w-20 h-20 rounded-full" style="border: 2px solid rgba(194,65,12,0.25); background: rgba(194,65,12,0.06);">
+                    <svg class="w-10 h-10" fill="none" stroke="var(--primary)" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
+                    </svg>
+                </div>
+
+                <p class="a1 section-label center mb-5">Payment Received</p>
+                <h1 class="a1 font-heading heading-hero mb-4" style="color: var(--text);">You're all set!</h1>
+                <p id="greeting" class="a2 font-heading text-xl md:text-2xl mb-3 hidden" style="color: var(--primary); font-weight: 600;"></p>
+                <p class="a3 font-body text-lg md:text-xl max-w-2xl mx-auto leading-relaxed" style="color: var(--text-muted);">
+                    Your <span class="highlight">Meta Advertising Management</span> subscription is active. A receipt is on its way to <span id="confirmEmail" class="highlight">your inbox</span>.
+                </p>
+
+                <!-- RECEIPT SUMMARY -->
+                <div class="a3 receipt max-w-md mx-auto mt-9 text-left">
+                    <div class="row"><span class="lab">Service</span><span class="val">Meta Advertising Management</span></div>
+                    <div class="row"><span class="lab">Billed today</span><span class="val">$500.00</span></div>
+                    <div class="row"><span class="lab">Billing</span><span class="val">$500 / month &middot; renews monthly</span></div>
+                    <div class="row"><span class="lab">Cancel</span><span class="val">Anytime</span></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-break"></div>
+
+        <!-- WHAT HAPPENS NEXT -->
+        <section class="py-16 md:py-24" style="background: var(--surface-warm);">
+            <div class="max-w-2xl mx-auto px-6">
+                <div class="text-center mb-12 reveal">
+                    <p class="section-label center justify-center mb-3">What Happens Next</p>
+                    <h2 class="font-heading text-3xl md:text-4xl" style="color: var(--text);">Getting your ads live</h2>
+                </div>
+
+                <div class="space-y-10">
+                    <div class="relative pl-14 reveal">
+                        <div class="step-line"></div>
+                        <div class="absolute left-0 top-0 w-10 h-10 rounded-full flex items-center justify-center" style="background: rgba(176,141,87,0.12); border: 1px solid rgba(176,141,87,0.35);">
+                            <span class="font-body text-sm font-semibold" style="color: var(--warm);">01</span>
+                        </div>
+                        <h3 class="font-heading text-lg md:text-xl mb-1" style="color: var(--text);">Receipt &amp; confirmation</h3>
+                        <p class="font-body text-sm leading-relaxed" style="color: var(--text-muted);">You'll receive an email receipt confirming your first payment and subscription details.</p>
+                    </div>
+
+                    <div class="relative pl-14 reveal">
+                        <div class="step-line"></div>
+                        <div class="absolute left-0 top-0 w-10 h-10 rounded-full flex items-center justify-center" style="background: rgba(176,141,87,0.12); border: 1px solid rgba(176,141,87,0.35);">
+                            <span class="font-body text-sm font-semibold" style="color: var(--warm);">02</span>
+                        </div>
+                        <h3 class="font-heading text-lg md:text-xl mb-1" style="color: var(--text);">Kickoff &amp; strategy call</h3>
+                        <p class="font-body text-sm leading-relaxed" style="color: var(--text-muted);">I'll reach out within one business day to schedule your kickoff, talk strategy, and get access to your ad account set up.</p>
+                    </div>
+
+                    <div class="relative pl-14 reveal">
+                        <div class="step-line"></div>
+                        <div class="absolute left-0 top-0 w-10 h-10 rounded-full flex items-center justify-center" style="background: rgba(176,141,87,0.12); border: 1px solid rgba(176,141,87,0.35);">
+                            <span class="font-body text-sm font-semibold" style="color: var(--warm);">03</span>
+                        </div>
+                        <h3 class="font-heading text-lg md:text-xl mb-1" style="color: var(--text);">Campaigns built &amp; launched</h3>
+                        <p class="font-body text-sm leading-relaxed" style="color: var(--text-muted);">I build your campaigns, launch them, and begin optimizing &mdash; keeping you in the loop the whole way.</p>
+                    </div>
+
+                    <div class="relative pl-14 reveal">
+                        <div class="absolute left-0 top-0 w-10 h-10 rounded-full flex items-center justify-center" style="background: rgba(194,65,12,0.1); border: 1px solid rgba(194,65,12,0.3);">
+                            <span class="font-body text-sm font-semibold" style="color: var(--primary);">04</span>
+                        </div>
+                        <h3 class="font-heading text-lg md:text-xl mb-1" style="color: var(--text);">Ongoing management &amp; reporting</h3>
+                        <p class="font-body text-sm leading-relaxed" style="color: var(--text-muted);">Each month I manage, optimize, and report on your ads &mdash; and we check in on strategy.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-break"></div>
+
+        <!-- CONTACT -->
+        <section class="py-16 md:py-20">
+            <div class="max-w-xl mx-auto px-6 text-center reveal">
+                <p class="section-label center justify-center mb-3">Questions?</p>
+                <h2 class="font-heading text-2xl md:text-3xl mb-6" style="color: var(--text);">Reach out anytime</h2>
+                <a href="mailto:dianna@diannacarlton.com" class="btn-outline">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+                    dianna@diannacarlton.com
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="relative z-10 py-12" style="background: var(--bg); border-top: 1px solid rgba(43,36,32,0.08);">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <p class="font-heading text-lg mb-1" style="color: var(--text);">Dianna Carlton</p>
+            <p class="font-body text-xs mb-3" style="color: var(--text-muted);">A Carlton Family Corporation Brand</p>
+            <p class="font-body text-xs" style="color: var(--text-muted);">6655 W. Sahara Ave., Suite B200, Las Vegas, NV 89146</p>
+            <p class="font-body text-xs mt-2">
+                <a href="mailto:dianna@diannacarlton.com" class="hover:underline" style="color: var(--text-muted);">dianna@diannacarlton.com</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll reveal
+        const revealObs = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+        }, { threshold: 0.18, rootMargin: '-40px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+        // Confirm purchase + trigger receipt email via n8n (DIANNA-CONFIRM).
+        // Stripe redirects here with ?session_id={CHECKOUT_SESSION_ID}; DIANNA-CONFIRM retrieves the
+        // session, sends the branded receipt, and marks the purchase complete. Idempotent via localStorage.
+        const CONFIRM_WEBHOOK = 'https://n8n.carltonaiservices.com/webhook/dianna-confirm';
+        (async function confirmPurchase() {
+            try {
+                const sessionId = new URLSearchParams(window.location.search).get('session_id');
+                if (!sessionId) return;
+                const guardKey = 'dianna_confirmed_' + sessionId;
+                if (localStorage.getItem(guardKey)) {
+                    const cached = JSON.parse(localStorage.getItem(guardKey));
+                    if (cached.first_name) { const g=document.getElementById('greeting'); g.textContent='Thanks, '+cached.first_name+'!'; g.classList.remove('hidden'); }
+                    if (cached.customer_email) document.getElementById('confirmEmail').textContent = cached.customer_email;
+                    return;
+                }
+                const res = await fetch(CONFIRM_WEBHOOK, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ session_id: sessionId })
+                });
+                if (!res.ok) return;
+                const data = await res.json().catch(() => ({}));
+                const firstName = (data.first_name || (data.customer_name || '').split(' ')[0] || '').trim();
+                try { localStorage.setItem(guardKey, JSON.stringify({ first_name: firstName, customer_email: data.customer_email || '' })); } catch (e) {}
+                if (firstName) {
+                    const g = document.getElementById('greeting');
+                    g.textContent = 'Thanks, ' + firstName + '!';
+                    g.classList.remove('hidden');
+                }
+                if (data.customer_email) {
+                    document.getElementById('confirmEmail').textContent = data.customer_email;
+                }
+            } catch (e) { /* non-blocking: page still shows generic confirmation */ }
+        })();
+    </script>
+</body>
+</html>
